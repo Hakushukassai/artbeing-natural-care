@@ -132,6 +132,32 @@ if (siteUrl) {
         assert.doesNotMatch(tile, /<p[\s>]/, `${path}: descriptions stay in product details`);
         assert.match(tile, /aria-haspopup="dialog"/, `${path}: product detail action`);
       }
+      const brand = data.brands.find((entry) => entry.path === path);
+      if (brand) {
+        const categories = brand.groups.flatMap((group) => group.categories);
+        const blocks = [...html.matchAll(/data-category="([^"]+)"/g)];
+        assert.deepEqual(
+          blocks.map((block) => block[1]),
+          categories.map((category) => category.id),
+        );
+        for (const [index, block] of blocks.entries()) {
+          const content = html.slice(block.index, blocks[index + 1]?.index);
+          const names = [...content.matchAll(/data-product-name="([^"]+)"/g)].map(
+            (match) => match[1],
+          );
+          assert.deepEqual(
+            names,
+            categories[index].items.map((item) => item.name),
+            `${path}: products stay in their category`,
+          );
+        }
+        for (const group of brand.groups) {
+          assert.ok(html.includes(`id="${group.id}"`), `${path}: category jump destination`);
+          assert.ok(html.includes(`id="${group.id}-heading"`), `${path}: named product group`);
+        }
+      } else {
+        assert.doesNotMatch(html, /data-category=/, `${path}: flat product overview`);
+      }
     }
     for (const match of html.matchAll(/<img[^>]+src="([^"]+)"/g)) {
       const url = new URL(match[1], siteUrl);
@@ -143,9 +169,11 @@ if (siteUrl) {
     const r = await fetch(url);
     assert.equal(r.status, 200, `Image: ${url}`);
     assert.match(r.headers.get("content-type") || "", /^image\//);
+    await r.body?.cancel();
   }
   const missing = await fetch(new URL("this-page-does-not-exist", baseUrl));
   assert.equal(missing.status, 404, "Unknown routes return 404");
+  await missing.body?.cancel();
   console.log(`PASS ${assets.size} image assets and 404 page`);
 }
 console.log(

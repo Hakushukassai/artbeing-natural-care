@@ -7,10 +7,13 @@ import { displayProductName, type CatalogProduct } from "@/data/catalog";
 export function ProductGrid({
   products,
   showBrand = true,
+  headingLevel = 3,
 }: {
   products: CatalogProduct[];
   showBrand?: boolean;
+  headingLevel?: 3 | 4;
 }) {
+  const Heading = headingLevel === 4 ? "h4" : "h3";
   const [selected, setSelected] = useState<CatalogProduct | null>(null);
   const [open, setOpen] = useState(false);
   const returnFocus = useRef<HTMLButtonElement | null>(null);
@@ -43,7 +46,7 @@ export function ProductGrid({
                   {product.brand.reading}
                 </span>
               )}
-              <h3>{displayProductName(product.item.name)}</h3>
+              <Heading>{displayProductName(product.item.name)}</Heading>
             </button>
           </article>
         ))}

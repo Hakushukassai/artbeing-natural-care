@@ -26,6 +26,7 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 - `src/data/catalog.ts`：商品単位への展開と、ブランド・用途・複数語検索。
 - `src/data/product-images.ts`：52商品の個別画像。実写への差し替えもここで管理。
 - `src/components/ProductGrid.tsx`：写真・商品名の一覧と、商品ごとの詳細パネル。
+- `src/components/BrandCatalog.tsx`：ブランド内の商品を用途・カテゴリ別に整理。カテゴリへの移動とブランド内検索。
 - `src/data/details.ts`：ヘナ・インディゴ・香る髪の詳細ページ。
 - `src/data/guides.ts`：ケアごとの使い方ガイド。
 - `src/data/faqs.ts`：質問と回答。
