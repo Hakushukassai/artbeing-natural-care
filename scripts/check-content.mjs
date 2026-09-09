@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import { readFile } from "node:fs/promises";
 import { build } from "esbuild";
 
 // Validate the data actually used by the site, including its final deduplication.
@@ -45,7 +47,21 @@ assert.equal(
 for (const p of products) {
   assert.equal(new URL(p.shopUrl).origin, "https://maharani.jp");
   assert.ok(p.desc.trim());
+  assert.ok(p.image, `${p.name}: individual product photo`);
 }
+assert.equal(
+  new Set(products.map((p) => p.image)).size,
+  products.length,
+  "Every product uses a different photograph",
+);
+const imageHashes = await Promise.all(
+  products.map(async (p) =>
+    createHash("sha256")
+      .update(await readFile(p.image))
+      .digest("hex"),
+  ),
+);
+assert.equal(new Set(imageHashes).size, products.length, "Product photos are not duplicated files");
 assert.equal(data.normalizeQuery("ﾍﾅ"), data.normalizeQuery("ヘナ"));
 assert.equal(data.normalizeQuery("いんでぃご"), data.normalizeQuery("インディゴ"));
 assert.equal(data.normalizeQuery("ＦＢ"), data.normalizeQuery("fb"));
@@ -82,9 +98,10 @@ const pages = [
 ];
 const siteUrl = process.argv[2];
 if (siteUrl) {
+  const baseUrl = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
   const assets = new Set();
   for (const path of pages) {
-    const response = await fetch(new URL(path, siteUrl));
+    const response = await fetch(new URL(path.slice(1), baseUrl));
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.match(html, /<html[^>]*lang="ja"/, `${path}: Japanese document language`);
@@ -106,6 +123,11 @@ if (siteUrl) {
       );
       assert.doesNotMatch(html, /class="collection-card/, `${path}: no series cards`);
       const tiles = [...html.matchAll(/<article class="product-tile"[\s\S]*?<\/article>/g)];
+      assert.equal(
+        new Set(tiles.map(([tile]) => tile.match(/<img[^>]+src="([^"]+)"/)?.[1])).size,
+        expectedTiles,
+        `${path}: each product displays a different photograph`,
+      );
       for (const [tile] of tiles) {
         assert.doesNotMatch(tile, /<p[\s>]/, `${path}: descriptions stay in product details`);
         assert.match(tile, /aria-haspopup="dialog"/, `${path}: product detail action`);
@@ -122,10 +144,10 @@ if (siteUrl) {
     assert.equal(r.status, 200, `Image: ${url}`);
     assert.match(r.headers.get("content-type") || "", /^image\//);
   }
-  const missing = await fetch(new URL("/this-page-does-not-exist", siteUrl));
+  const missing = await fetch(new URL("this-page-does-not-exist", baseUrl));
   assert.equal(missing.status, 404, "Unknown routes return 404");
   console.log(`PASS ${assets.size} image assets and 404 page`);
 }
 console.log(
-  `PASS ${products.length} unique products; official destinations, brand/use filters and multiword search`,
+  `PASS ${products.length} unique products and photographs; official destinations, brand/use filters and multiword search`,
 );

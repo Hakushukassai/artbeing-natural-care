@@ -98,7 +98,9 @@ export function ProductGrid({
               <p className="product-focus-caution">
                 ご使用前に説明書とパッチテストの案内をご確認ください。
               </p>
-              <p className="product-focus-note">写真はイメージです。実際の商品とは異なります。</p>
+              <p className="product-focus-note">
+                画像はAI生成の仮画像です。実際の商品とは異なります。
+              </p>
             </>
           )}
         </SheetContent>

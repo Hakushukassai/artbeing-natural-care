@@ -24,6 +24,7 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 
 - `src/data/products.ts`：ブランド、用途、シリーズ、52商品の説明と公式ストアへのリンク。
 - `src/data/catalog.ts`：商品単位への展開と、ブランド・用途・複数語検索。
+- `src/data/product-images.ts`：52商品の個別画像。実写への差し替えもここで管理。
 - `src/components/ProductGrid.tsx`：写真・商品名の一覧と、商品ごとの詳細パネル。
 - `src/data/details.ts`：ヘナ・インディゴ・香る髪の詳細ページ。
 - `src/data/guides.ts`：ケアごとの使い方ガイド。
@@ -32,7 +33,7 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 - `src/styles.css`：色・書体・余白・画面幅ごとのレイアウト・モーション。
 - `docs/redesign-notes.md`：調査元、設計意図、写真の差し替え方、確認事項。
 
-商品写真は `src/data/products.ts` の各itemに `image` を設定すると商品単位で差し替えられます。未設定の場合はカテゴリー画像を使用します。
+商品写真は `src/data/product-images.ts` の商品名と画像の対応で管理し、一覧・詳細パネル・詳しい商品紹介へ反映します。52商品の仮画像とヘナの使い方4枚を、既存画像を参照せず個別に新規生成しています。生成指示と保存先は [画像の管理](docs/image-generation/README.md) を参照してください。
 
 商品価格や在庫は掲載せず、公式ストアの該当商品へ直接案内します。購入・お問い合わせは公式サイトで完結します。このサイトには購入・送信フォームや架空の動画再生操作はありません。
 

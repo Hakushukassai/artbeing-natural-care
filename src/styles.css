@@ -2132,8 +2132,8 @@
 }
 .product-focus-photo {
   width: 100%;
-  aspect-ratio: 1.45;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
   margin: 28px 0;
   border-radius: 3px;
 }

@@ -36,7 +36,7 @@ export function Footer() {
           </nav>
         </div>
         <p className="image-notice">
-          掲載写真はイメージです。実際の商品・パッケージとは異なります。
+          掲載画像はAI生成の仮画像です。実際の商品・パッケージとは異なります。
         </p>
         <div className="footer-bottom">
           <small>© {new Date().getFullYear()} ARTBEING INC.</small>

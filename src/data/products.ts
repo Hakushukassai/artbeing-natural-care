@@ -1,3 +1,4 @@
+import { productImages } from "./product-images";
 import hennaImg from "@/assets/product-henna.jpg";
 import indigoImg from "@/assets/indigo-leaf-powder-960.webp";
 import herbalColorImg from "@/assets/indigo-leaf-powder-960.webp";
@@ -689,6 +690,7 @@ for (const brand of brands)
         const path = shopPaths[item.name];
         if (!path) throw new Error(`Missing official product URL: ${item.name}`);
         item.shopUrl = `https://maharani.jp/${path}`;
+        item.image = productImages[item.name];
       }
 export const productCount = (brand: Brand) =>
   brand.groups.reduce((sum, g) => sum + g.categories.reduce((n, c) => n + c.items.length, 0), 0);

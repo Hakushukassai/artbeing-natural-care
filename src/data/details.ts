@@ -1,12 +1,10 @@
-import henna from "@/assets/product-henna.jpg";
-import indigo from "@/assets/indigo-leaf-powder-960.webp";
-import shampoo from "@/assets/herbal-shampoo-powder-960.webp";
+import { productImages } from "./product-images";
 export const details = {
   henna: {
     name: "マハラニヘナ 石臼挽き",
     en: "STONE-GROUND HENNA",
     catch: "一枚の葉から、髪の美しさへ。",
-    image: henna,
+    image: productImages["マハラニヘナ 石臼挽き"],
     category: "ヘナ・植物のヘアカラー",
     description:
       "インド・ラジャスタン州ソジャットのヘナを、伝統の石臼で挽いた粉末。白髪をオレンジ系に染めながら、髪をすこやかに整えます。",
@@ -49,7 +47,7 @@ export const details = {
     name: "マハラニ インディゴ",
     en: "PURE INDIGO LEAF",
     catch: "ヘナに重ねる、深い色。",
-    image: indigo,
+    image: productImages["インディゴ"],
     category: "ヘナ・植物のヘアカラー",
     description:
       "ナンバンアイの葉の粉末。ヘナで染めた後に重ねることで、オレンジの赤みを抑え、ブラウンから黒に近い色合いへと整えます。",
@@ -92,7 +90,7 @@ export const details = {
     name: "ハーブシャンプー 香る髪",
     en: "POWDER HERBAL SHAMPOO",
     catch: "泡ではなく、ハーブで洗う。",
-    image: shampoo,
+    image: productImages["ハーブシャンプー 香る髪"],
     category: "洗う・整える",
     description:
       "植物の粉末をお湯に溶かして使う、泡立たないシャンプー。ヘナとの相性を考えたハーブのブレンドで、頭皮と髪を洗い、しなやかに整えます。",

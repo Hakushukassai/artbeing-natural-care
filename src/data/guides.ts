@@ -1,6 +1,9 @@
+import hennaMix from "@/assets/guides/henna-mix.webp";
+import hennaApply from "@/assets/guides/henna-apply.webp";
+import hennaWait from "@/assets/guides/henna-wait.webp";
+import hennaRinse from "@/assets/guides/henna-rinse.webp";
 import stepMix from "@/assets/step-mix.jpg";
 import stepApply from "@/assets/step-apply.jpg";
-import stepWait from "@/assets/step-wait.jpg";
 import stepRinse from "@/assets/step-rinse.jpg";
 import powder from "@/assets/herbal-shampoo-powder-960.webp";
 import oil from "@/assets/product-headoil.jpg";
@@ -17,25 +20,25 @@ export const guides = [
         title: "お湯で溶く",
         text: "ボウルにお湯を入れ、粉を少しずつ加えて混ぜます。髪にのばしやすい、なめらかなペーストに。湯温や使用量は商品の説明書を確認してください。",
         tip: "塗りやすい固さにすることが、塗り残しを防ぐコツ。",
-        image: stepMix,
+        image: hennaMix,
       },
       {
         title: "根元から塗る",
         text: "手袋を着用し、白髪が気になる根元から塗布します。髪を分けながら、ペーストを十分にのせていきます。",
         tip: "衣服・床・タオルへの色移りに備えて準備を。",
-        image: stepApply,
+        image: hennaApply,
       },
       {
         title: "包んで時間を置く",
         text: "ラップやシャワーキャップで髪を包み、説明書に記載の時間を目安に置きます。仕上がりは髪質や室温などによって異なります。",
         tip: "放置時間は商品によって異なります。長く置きすぎないように。",
-        image: stepWait,
+        image: hennaWait,
       },
       {
         title: "しっかりすすぐ",
         text: "お湯でペーストを十分に洗い流します。シャンプーのタイミングは商品の案内に従い、タオルや衣服への色移りにご注意ください。",
         tip: "染めた直後は、濃い色のタオルがおすすめ。",
-        image: stepRinse,
+        image: hennaRinse,
       },
     ],
   },

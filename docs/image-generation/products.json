@@ -1,0 +1,366 @@
+[
+  {
+    "id": "maharani-henna-0",
+    "name": "マハラニヘナ 石臼挽き",
+    "description": "石臼でゆっくり挽くことで葉の成分を損なわず、鮮度・粘り・染毛力に優れた看板商品。ヘナ歴の長い方にとくにおすすめです。",
+    "brand": "Maharani",
+    "category": "ヘナ"
+  },
+  {
+    "id": "maharani-henna-1",
+    "name": "マハラニヘナ ファイン粉末",
+    "description": "きめ細かく純度が高く、なめらかなペーストに仕上がるためハケ塗りにも最適。塗布と洗い流しがしやすい一品です。",
+    "brand": "Maharani",
+    "category": "ヘナ"
+  },
+  {
+    "id": "maharani-henna-2",
+    "name": "マハラニヘナ (機械挽き)",
+    "description": "石臼挽きと同等の良質な葉を使用し、高品質をリーズナブルにお試しいただける定番品です。",
+    "brand": "Maharani",
+    "category": "ヘナ"
+  },
+  {
+    "id": "maharani-henna-3",
+    "name": "オーガニック ヘナコンシーラー",
+    "description": "ヘナ染め後にちらつく白髪や、伸びてきた根元を素早くカバー。スティックタイプで外出先や旅行にも携帯できます。",
+    "brand": "Maharani",
+    "category": "ヘナ"
+  },
+  {
+    "id": "maharani-indigo-0",
+    "name": "インディゴ",
+    "description": "ヘナの赤みを抑える後染め用の藍草100%。染め方によって、ブラウンからダークブラウン、ほぼ黒まで自由に色合いを演出できます。",
+    "brand": "Maharani",
+    "category": "インディゴ"
+  },
+  {
+    "id": "maharani-herbalcolor-0",
+    "name": "ハーバルカラー1 ライトブラウン",
+    "description": "1〜2週に一度のリタッチを続けることで、白髪部分がライトブラウン〜ブラウン系に少しずつ定着します。",
+    "brand": "Maharani",
+    "category": "ハーバルカラー"
+  },
+  {
+    "id": "maharani-herbalcolor-1",
+    "name": "ハーバルカラー3 ブラウン",
+    "description": "リタッチを重ねるごとに、白髪部分がブラウン〜ダークブラウン系の落ち着いた色合いに馴染んでいきます。",
+    "brand": "Maharani",
+    "category": "ハーバルカラー"
+  },
+  {
+    "id": "maharani-herbalcolor-2",
+    "name": "ハーバルカラー5 ダークブラウン",
+    "description": "短めのリタッチでも、白髪部分がダークブラウン系にしっかりと染まる、深みのある色合いです。",
+    "brand": "Maharani",
+    "category": "ハーバルカラー"
+  },
+  {
+    "id": "maharani-herbalcolor-3",
+    "name": "ハーバルカラー7 ソフトブラック",
+    "description": "ラベンダーの心地よい香りとともに、白髪部分をソフトブラック〜ブラック系へと染め上げます。",
+    "brand": "Maharani",
+    "category": "ハーバルカラー"
+  },
+  {
+    "id": "maharani-herbalcolor-4",
+    "name": "ハーバルカラー9 ブルーブラック",
+    "description": "白髪部分をブラック〜ブルーブラック系へ。深みのある黒を求める方におすすめの色合いです。",
+    "brand": "Maharani",
+    "category": "ハーバルカラー"
+  },
+  {
+    "id": "maharani-colortreatment-0",
+    "name": "カラートリートメント花ブレンド",
+    "description": "主成分はヘナで、使い方も染まり方もヘナと同じ。お花を加えた心地よい香りでヘナタイムを彩ります。",
+    "brand": "Maharani",
+    "category": "カラートリートメント"
+  },
+  {
+    "id": "maharani-kaorukami-0",
+    "name": "ハーブシャンプー 香る髪",
+    "description": "ヘナを配合し、ヘナとの相性が抜群のロングセラー。洗いながらトリートメント効果も得られます。",
+    "brand": "Maharani",
+    "category": "ハーブシャンプー 香る髪 基本シリーズ"
+  },
+  {
+    "id": "maharani-kaorukami-1",
+    "name": "ハーブシャンプー 香る髪プラス",
+    "description": "香る髪のよさをそのままに、ヘナを抑え3種のハーブを加えてトリートメント力を高めた商品です。",
+    "brand": "Maharani",
+    "category": "ハーブシャンプー 香る髪 基本シリーズ"
+  },
+  {
+    "id": "maharani-kaorukami-2",
+    "name": "ハーブシャンプー 香る髪ベーシック",
+    "description": "「髪を洗う」という基本に忠実に、シンプルな配合でしっかりとした洗浄力を実現したハーブシャンプーです。",
+    "brand": "Maharani",
+    "category": "ハーブシャンプー 香る髪 基本シリーズ"
+  },
+  {
+    "id": "maharani-floral-0",
+    "name": "香る髪ラベンダー",
+    "description": "ラベンダーはインドハーブと相性がよく、香りに癒されながらハーブ特有の匂いを和らげてくれます。",
+    "brand": "Maharani",
+    "category": "香る髪 お花の香りシリーズ"
+  },
+  {
+    "id": "maharani-floral-1",
+    "name": "香る髪アロマプラス",
+    "description": "ラベンダーとイランイランの華やかな香りで、ハーブ特有の香りが苦手な方にも心地よいシャンプータイムを。",
+    "brand": "Maharani",
+    "category": "香る髪 お花の香りシリーズ"
+  },
+  {
+    "id": "maharani-floral-2",
+    "name": "香る髪花ブレンド",
+    "description": "イランイランの花の香りに包まれ、ハイビスカスが髪に潤いを与えるしっとりしなやかな仕上がりです。",
+    "brand": "Maharani",
+    "category": "香る髪 お花の香りシリーズ"
+  },
+  {
+    "id": "maharani-refresh-0",
+    "name": "香る髪オレンジ２",
+    "description": "オレンジの爽やかな香りに元気な気持ちになる、すっきりとした洗い上がりのハーブシャンプーです。",
+    "brand": "Maharani",
+    "category": "香る髪 さっぱりシリーズ"
+  },
+  {
+    "id": "maharani-refresh-1",
+    "name": "香る髪ペパーミント",
+    "description": "ミント葉とペパーミント精油のダブルミントで、汗ばむ季節にうれしい涼やかな洗い上がりです。",
+    "brand": "Maharani",
+    "category": "香る髪 さっぱりシリーズ"
+  },
+  {
+    "id": "maharani-refresh-2",
+    "name": "香る髪オイリースカルプ",
+    "description": "頭皮が脂っぽい方のために、天然の石鹸成分リタを配合。マッサージしながら洗うことで深いさっぱり感が得られます。",
+    "brand": "Maharani",
+    "category": "香る髪 さっぱりシリーズ"
+  },
+  {
+    "id": "maharani-special-0",
+    "name": "ヘナシカ洗髪粉",
+    "description": "ヘナ、シカカイ、アムラ、ハイビスカス、リタ、ニームなど11種のインドハーブを贅沢にブレンドした洗髪粉です。",
+    "brand": "Maharani",
+    "category": "スペシャルシリーズ"
+  },
+  {
+    "id": "maharani-special-1",
+    "name": "ニュー香る髪",
+    "description": "シカカイを配合せず、香る髪と同様の仕上がりを目指したマイルドな新感覚のハーブシャンプーです。",
+    "brand": "Maharani",
+    "category": "スペシャルシリーズ"
+  },
+  {
+    "id": "maharani-colorless-0",
+    "name": "カラーレストリートメント (カッシア)",
+    "description": "通称ニュートラルヘナ。ヘナのような着色作用はなく、トリートメントと洗浄を担います。",
+    "brand": "Maharani",
+    "category": "カラーレストリートメント"
+  },
+  {
+    "id": "maharani-colorless-1",
+    "name": "カラーレス花ブレンド",
+    "description": "髪に色がつかない、染まらないトリートメント。お花の香りで心地よく、素手で塗布できる手軽さも魅力です。",
+    "brand": "Maharani",
+    "category": "カラーレストリートメント"
+  },
+  {
+    "id": "maharani-oil-0",
+    "name": "マハラニ ヘアケアオイル",
+    "description": "森を思わせる香りのヘアケアオイル。ヘナ前のケアや髪のお手入れに。",
+    "brand": "Maharani",
+    "category": "ヘアオイル"
+  },
+  {
+    "id": "maharani-oil-1",
+    "name": "マハラニ ヘアケアオイル FB",
+    "description": "アジアンスパを思わせる香り。髪にうるおいを与えるヘアケアオイルです。",
+    "brand": "Maharani",
+    "category": "ヘアオイル"
+  },
+  {
+    "id": "maharani-herbs-0",
+    "name": "マハラニ シカカイ",
+    "description": "天然の石鹸成分サポニンを含み、頭皮と髪を清浄に保ちながら、毛髪をしなやかに仕上げます。",
+    "brand": "Maharani",
+    "category": "洗髪系 単体ハーブ"
+  },
+  {
+    "id": "maharani-herbs-1",
+    "name": "マハラニ アムラ",
+    "description": "髪にハリとコシを与えるハーブ。ボリュームが欲しい方や、頭皮と髪をすこやかに保ちたい方に。",
+    "brand": "Maharani",
+    "category": "洗髪系 単体ハーブ"
+  },
+  {
+    "id": "maharani-herbs-2",
+    "name": "マハラニ カチュールスガンディ",
+    "description": "西洋の香水にも使われるほど香り高いハーブで、ヘアケアやスキンケアに幅広く活用できます。",
+    "brand": "Maharani",
+    "category": "洗髪系 単体ハーブ"
+  },
+  {
+    "id": "maharani-herbs-3",
+    "name": "マハラニ ニーム",
+    "description": "ハーブシャンプーと一緒に使うと清浄感が増し、ムルタニミッティやアムラと併せれば肌の洗浄にも。",
+    "brand": "Maharani",
+    "category": "洗髪系 単体ハーブ"
+  },
+  {
+    "id": "maharani-bodywash-0",
+    "name": "マハラニ ムルタニミッティ",
+    "description": "白い泥の粉末をペースト状にして、フェイスパックやボディの洗浄に。さっぱりとした洗い上がりです。",
+    "brand": "Maharani",
+    "category": "洗浄・パック"
+  },
+  {
+    "id": "maharani-rose-0",
+    "name": "無農薬ローズ粉末",
+    "description": "ピンク色の花びらをていねいに乾燥・粉末化。肌のお手入れやフェイスパックに使います。",
+    "brand": "Maharani",
+    "category": "無農薬栽培ローズ"
+  },
+  {
+    "id": "atharva-head-oil-0",
+    "name": "アタルバ ヘッドマッサージオイル",
+    "description": "アムラやブランミー、シャタバリの根エキスなどを配合した、アーユルヴェーダ伝統のヘッドオイルです。",
+    "brand": "Atharva",
+    "category": "ヘッドマッサージオイル"
+  },
+  {
+    "id": "atharva-head-oil-1",
+    "name": "ヘッドマッサージオイル・リラックス",
+    "description": "香り成分としてカモミールオイルを配合。ヘナの匂いを和らげながら、リラックスタイムを演出します。",
+    "brand": "Atharva",
+    "category": "ヘッドマッサージオイル"
+  },
+  {
+    "id": "atharva-head-oil-2",
+    "name": "ヘッドマッサージオイル R",
+    "description": "アムラ、ブランミー配合の伝統的なヘッドオイルに、贅沢にローズオイルを加えた香り高い商品です。",
+    "brand": "Atharva",
+    "category": "ヘッドマッサージオイル"
+  },
+  {
+    "id": "atharva-head-oil-3",
+    "name": "アタルバ ヘアオイル",
+    "description": "ココナッツオイルの爽やかで甘い香りに7つのハーブが包まれ、髪をサラサラに整える軽い使用感です。",
+    "brand": "Atharva",
+    "category": "ヘッドマッサージオイル"
+  },
+  {
+    "id": "atharva-head-powder-0",
+    "name": "アタルバ 洗髪粉",
+    "description": "無農薬オレンジピール、シカカイ、アムラ、リタを独自に粉末化。髪はもちろん顔・体の洗浄にも使えます。",
+    "brand": "Atharva",
+    "category": "洗髪粉"
+  },
+  {
+    "id": "atharva-body-oil-0",
+    "name": "アタルバ CBLマッサージオイル",
+    "description": "サンダルウッドを配合した貴重なオイルで、全身マッサージ(アビヤンガ)に最適。吸収がよく保湿に優れます。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-1",
+    "name": "アタルバ セサミオイル",
+    "description": "自社農園で無農薬栽培したゴマをコールドプレスで抽出。アビヤンガのベースオイルにもおすすめです。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-2",
+    "name": "アタルバ ニームオイル",
+    "description": "ニーム葉のエキスをゴマ油に抽出。強い玉ねぎ臭がなく匂いがマイルドで、スキンケアに最適です。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-3",
+    "name": "アタルバ ベビーオイル",
+    "description": "サンダルウッド原木や各種インドハーブを使用し、肌のうるおいを保つためのオイルです。ご使用前に成分と注意事項をご確認ください。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-4",
+    "name": "マッサージオイル NR",
+    "description": "ニルグンディを主原料とした、乾燥が気になる肌のお手入れに使うマッサージオイルです。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-5",
+    "name": "ピッタ・マッサージオイル",
+    "description": "ベチパー(インド名コス)の香りが心地よい、ピッタ体質の方のためのマッサージオイルです。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-6",
+    "name": "カファ・マッサージオイル",
+    "description": "カンファーの香りでさっぱりとした使用感に仕上げた、カファ体質の方向けのマッサージオイルです。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-oil-7",
+    "name": "ヴァータ・マッサージオイル",
+    "description": "レモングラスの香りが心地よく広がる、ヴァータ体質の方向けのマッサージオイルです。",
+    "brand": "Atharva",
+    "category": "マッサージオイル"
+  },
+  {
+    "id": "atharva-body-powder-0",
+    "name": "アタルバ ハーバルスクラブ",
+    "description": "アムラ粉を主体としたやや繊維質的な肌さわりで、表面の汚れを優しく取り除く顔・体兼用スクラブです。",
+    "brand": "Atharva",
+    "category": "スクラブ・洗浄粉末"
+  },
+  {
+    "id": "atharva-skin-cream-0",
+    "name": "アタルバ フェイスクリーム R",
+    "description": "良質なカシミール産サフランを配合し、ローズの香りで包み込む保湿クリーム。お顔の輝きを引き出します。",
+    "brand": "Atharva",
+    "category": "保湿クリーム"
+  },
+  {
+    "id": "atharva-skin-cream-1",
+    "name": "アタルバ フェイスクリーム K",
+    "description": "Rと同じ使用感のまま、ローズオイルを加えていないタイプ。原料由来の香りはあります。",
+    "brand": "Atharva",
+    "category": "保湿クリーム"
+  },
+  {
+    "id": "atharva-skin-cream-2",
+    "name": "アタルバ スキンクリーム",
+    "description": "フェイスクリームより香りや配合を控えたデイリー使い向け。乾燥しやすい顔から手足まで気軽に。",
+    "brand": "Atharva",
+    "category": "保湿クリーム"
+  },
+  {
+    "id": "atharva-skin-powder-0",
+    "name": "アタルバ ハーバルフェイスパック",
+    "description": "アナントムール、ロドラ、ニーム、サンダルウッドなど6種のハーブを配合し、肌に潤いを与え整えます。",
+    "brand": "Atharva",
+    "category": "フェイスパック"
+  },
+  {
+    "id": "atharva-skin-powder-1",
+    "name": "フェイスパック R",
+    "description": "無農薬栽培のローザセンティフォリアを主成分に、イェシティマドゥやアムラを配合した贅沢なローズパックです。",
+    "brand": "Atharva",
+    "category": "フェイスパック"
+  },
+  {
+    "id": "atharva-point-care-0",
+    "name": "イェシティマドゥオイル",
+    "description": "甘草のエキスをオイルに抽出。乾燥が気になる部分のお手入れに使います。",
+    "brand": "Atharva",
+    "category": "部分ケア"
+  }
+]
