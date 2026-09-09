@@ -1,0 +1,131 @@
+import assert from "node:assert/strict";
+import { build } from "esbuild";
+
+// Validate the data actually used by the site, including its final deduplication.
+const result = await build({
+  stdin: {
+    contents: 'export * from "./src/data/products.ts"; export * from "./src/data/catalog.ts";',
+    resolveDir: process.cwd(),
+    loader: "ts",
+  },
+  bundle: true,
+  platform: "node",
+  format: "esm",
+  write: false,
+  plugins: [
+    {
+      name: "image-paths",
+      setup(b) {
+        b.onLoad({ filter: /\.(webp|jpg|png)$/ }, ({ path }) => ({
+          contents: `export default ${JSON.stringify(path)}`,
+          loader: "js",
+        }));
+      },
+    },
+  ],
+});
+const data = await import(
+  `data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString("base64")}`
+);
+const products = data.brands.flatMap((b) =>
+  b.groups.flatMap((g) =>
+    g.categories.flatMap((c) => c.items.map((i) => ({ ...i, brand: b.key, group: g.id }))),
+  ),
+);
+assert.equal(
+  new Set(products.map((p) => p.name)).size,
+  products.length,
+  "Product names must not be duplicated across categories",
+);
+assert.equal(
+  products.some((p) => p.brand === "maharani" && p.name.startsWith("アタルバ")),
+  false,
+  "Atharva products must not be listed under Maharani",
+);
+for (const p of products) {
+  assert.equal(new URL(p.shopUrl).origin, "https://maharani.jp");
+  assert.ok(p.desc.trim());
+}
+assert.equal(data.normalizeQuery("ﾍﾅ"), data.normalizeQuery("ヘナ"));
+assert.equal(data.normalizeQuery("いんでぃご"), data.normalizeQuery("インディゴ"));
+assert.equal(data.normalizeQuery("ＦＢ"), data.normalizeQuery("fb"));
+assert.equal(data.catalogProducts.length, 52, "Every product has its own tile");
+assert.equal(new Set(data.catalogProducts.map((p) => p.id)).size, 52, "Stable, unique tile IDs");
+assert.equal(data.filterProducts({ brand: "maharani" }).length, 32);
+assert.equal(data.filterProducts({ brand: "atharva" }).length, 20);
+assert.deepEqual(
+  data.filterProducts({ query: "マハラニ　ヘアケア　ｆｂ" }).map((p) => p.item.name),
+  ["マハラニ ヘアケアオイル FB"],
+  "Multiword search handles full-width characters",
+);
+assert.ok(
+  data
+    .filterProducts({ query: "あたるば ふぇいすくりーむ" })
+    .some((p) => p.item.name === "アタルバ フェイスクリーム R"),
+  "Kana search finds the matching products and category",
+);
+assert.equal(data.filterProducts({ brand: "maharani", query: "Atharva" }).length, 0);
+assert.equal(data.filterProducts({ brand: "atharva", group: "head" }).length, 5);
+assert.equal(data.filterProducts({ query: "存在しない商品" }).length, 0);
+const pages = [
+  "/",
+  "/products",
+  "/products/maharani",
+  "/products/atharva",
+  "/products/henna",
+  "/products/indigo",
+  "/products/shampoo",
+  "/about",
+  "/guide",
+  "/faq",
+  "/company",
+];
+const siteUrl = process.argv[2];
+if (siteUrl) {
+  const assets = new Set();
+  for (const path of pages) {
+    const response = await fetch(new URL(path, siteUrl));
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, /<html[^>]*lang="ja"/, `${path}: Japanese document language`);
+    assert.match(html, /<title>[^<]*アートビーング[^<]*<\/title>/, `${path}: real page title`);
+    assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${path}: one primary heading`);
+    assert.match(html, /id="main-content"/, `${path}: keyboard skip target`);
+    assert.doesNotMatch(html, /Lovable App|kusa &amp; mi|info@example\.com/);
+    const expectedTiles = {
+      "/": 4,
+      "/products": 52,
+      "/products/maharani": 32,
+      "/products/atharva": 20,
+    }[path];
+    if (expectedTiles !== undefined) {
+      assert.equal(
+        (html.match(/data-product-name=/g) || []).length,
+        expectedTiles,
+        `${path}: individual products visible`,
+      );
+      assert.doesNotMatch(html, /class="collection-card/, `${path}: no series cards`);
+      const tiles = [...html.matchAll(/<article class="product-tile"[\s\S]*?<\/article>/g)];
+      for (const [tile] of tiles) {
+        assert.doesNotMatch(tile, /<p[\s>]/, `${path}: descriptions stay in product details`);
+        assert.match(tile, /aria-haspopup="dialog"/, `${path}: product detail action`);
+      }
+    }
+    for (const match of html.matchAll(/<img[^>]+src="([^"]+)"/g)) {
+      const url = new URL(match[1], siteUrl);
+      if (url.origin === new URL(siteUrl).origin) assets.add(url.href);
+    }
+    console.log(`PASS ${path}`);
+  }
+  for (const url of assets) {
+    const r = await fetch(url);
+    assert.equal(r.status, 200, `Image: ${url}`);
+    assert.match(r.headers.get("content-type") || "", /^image\//);
+  }
+  const missing = await fetch(new URL("/this-page-does-not-exist", siteUrl));
+  assert.equal(missing.status, 404, "Unknown routes return 404");
+  console.log(`PASS ${assets.size} image assets and 404 page`);
+}
+console.log(
+  `PASS ${products.length} unique products; official destinations, brand/use filters and multiword search`,
+);
