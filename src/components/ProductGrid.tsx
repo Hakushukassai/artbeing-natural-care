@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { displayProductName, type CatalogProduct } from "@/data/catalog";
+import { ProductPhoto } from "./ProductPhoto";
 
 export function ProductGrid({
   products,
@@ -32,15 +33,7 @@ export function ProductGrid({
                 setOpen(true);
               }}
             >
-              <div className="product-tile-photo">
-                <img
-                  src={product.item.image ?? product.category.image}
-                  alt=""
-                  loading="lazy"
-                  width={600}
-                  height={750}
-                />
-              </div>
+              <ProductPhoto src={product.item.image ?? product.category.image} />
               {showBrand && (
                 <span className={`product-tile-brand ${product.brand.key}`}>
                   {product.brand.reading}
@@ -69,13 +62,13 @@ export function ProductGrid({
                 {displayProductName(selected.item.name)}
               </SheetTitle>
               <p className="product-focus-category">{selected.category.ja}</p>
-              <img
-                className="product-focus-photo"
-                src={selected.item.image ?? selected.category.image}
-                alt={`${selected.item.name}のケアイメージ`}
-                width={600}
-                height={500}
-              />
+              <div className="product-focus-photo">
+                <ProductPhoto
+                  src={selected.item.image ?? selected.category.image}
+                  alt={`${selected.item.name}の商品写真`}
+                  variant="detail"
+                />
+              </div>
               <SheetDescription className="product-focus-description">
                 {selected.item.desc}
               </SheetDescription>
@@ -101,9 +94,7 @@ export function ProductGrid({
               <p className="product-focus-caution">
                 ご使用前に説明書とパッチテストの案内をご確認ください。
               </p>
-              <p className="product-focus-note">
-                画像はAI生成の仮画像です。実際の商品とは異なります。
-              </p>
+              <p className="product-focus-note">写真は容量・パッケージの一例です。</p>
             </>
           )}
         </SheetContent>

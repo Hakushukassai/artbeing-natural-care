@@ -34,7 +34,7 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 - `src/styles.css`：色・書体・余白・画面幅ごとのレイアウト・モーション。
 - `docs/redesign-notes.md`：調査元、設計意図、写真の差し替え方、確認事項。
 
-商品写真は `src/data/product-images.ts` の商品名と画像の対応で管理し、一覧・詳細パネル・詳しい商品紹介へ反映します。52商品の仮画像とヘナの使い方4枚を、既存画像を参照せず個別に新規生成しています。生成指示と保存先は [画像の管理](docs/image-generation/README.md) を参照してください。
+商品写真は `src/data/product-images.ts` の商品名と画像の対応で管理し、一覧・詳細パネル・詳しい商品紹介へ反映します。52商品は公式サイトから取得した写真を使用し、元のJPEGを加工せず `src/assets/products/official/` に保存しています。出典とチェックサムは `docs/official-product-images.json`、差し替え方は [公式画像の管理](docs/official-product-images.md) を参照してください。ヘナの使い方などのイメージ画像は引き続きAI生成素材です。
 
 商品価格や在庫は掲載せず、公式ストアの該当商品へ直接案内します。購入・お問い合わせは公式サイトで完結します。このサイトには購入・送信フォームや架空の動画再生操作はありません。
 

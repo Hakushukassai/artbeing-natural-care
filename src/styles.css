@@ -854,12 +854,7 @@
 .detail-photo {
   position: relative;
   overflow: hidden;
-  background: var(--sand);
-}
-.detail-photo img {
-  width: 100%;
-  aspect-ratio: 0.86;
-  object-fit: cover;
+  background: #fff;
 }
 .detail-photo small {
   position: absolute;
@@ -1054,11 +1049,6 @@
 }
 .related-grid > a:hover {
   border-color: #75836a;
-}
-.related-grid img {
-  width: 85px;
-  height: 105px;
-  object-fit: cover;
 }
 .related-grid h3 {
   font-size: 17px;
@@ -1672,9 +1662,6 @@
     gap: 30px;
     padding-bottom: 40px;
   }
-  .detail-photo img {
-    aspect-ratio: 1.25;
-  }
   .detail-summary h1 {
     font-size: 31px;
   }
@@ -2057,22 +2044,7 @@
   border: 0;
   padding: 0;
 }
-.product-tile-photo {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: var(--sand);
-  border-radius: 3px;
-}
-.product-tile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.65s var(--ease);
-}
-.product-tile-button:hover .product-tile-photo img {
-  transform: scale(1.025);
-}
-.product-tile-brand {
+.product-tile-button:hover .product-tile-brand {
   display: block;
   margin: 16px 0 5px;
   font-size: 0.75rem;
@@ -2132,10 +2104,7 @@
 }
 .product-focus-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
   margin: 28px 0;
-  border-radius: 3px;
 }
 .product-focus-description {
   font-size: 1rem;
@@ -2732,4 +2701,51 @@
     font-size: 0.9375rem;
     margin-bottom: 15px;
   }
+}
+
+/* Match the visible product, rather than the white margins in the source file. */
+.product-photo {
+  container-type: inline-size;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 3px;
+}
+.product-photo-subject {
+  position: relative;
+  width: min(76cqw, calc(88cqw * var(--photo-ratio)), calc(240px * var(--photo-ratio)));
+  aspect-ratio: var(--photo-ratio);
+  overflow: hidden;
+  transition: transform 350ms var(--ease);
+}
+.product-photo .product-photo-subject img {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  aspect-ratio: auto;
+  object-fit: fill;
+}
+.product-tile-button:hover .product-photo-subject {
+  transform: translateY(-3px);
+}
+.product-photo-detail {
+  aspect-ratio: 4 / 3;
+}
+.product-photo-detail .product-photo-subject {
+  width: min(74cqw, calc(60cqw * var(--photo-ratio)), calc(280px * var(--photo-ratio)));
+}
+.product-photo-related {
+  width: 85px;
+  flex-shrink: 0;
+}
+.product-photo-related .product-photo-subject {
+  width: min(82cqw, calc(105cqw * var(--photo-ratio)));
 }

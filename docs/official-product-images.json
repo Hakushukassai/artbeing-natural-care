@@ -1,0 +1,481 @@
+[
+  {
+    "id": "maharani-henna-0",
+    "name": "マハラニヘナ 石臼挽き",
+    "productPage": "https://maharani.jp/henna.html",
+    "sourcePage": "https://maharani.jp/henna.html",
+    "imageUrl": "https://maharani.jp/img8/GAT/25G1.jpg",
+    "file": "src/assets/products/official/maharani-henna-0.jpg",
+    "sha256": "add1cf9a21a3e54399101200134cee9da78e7c77e83fac042972b2a7569e8f96"
+  },
+  {
+    "id": "maharani-henna-1",
+    "name": "マハラニヘナ ファイン粉末",
+    "productPage": "https://maharani.jp/henna_fine.html",
+    "sourcePage": "https://maharani.jp/henna_fine.html",
+    "imageUrl": "https://maharani.jp/img8/FINE/FINE100.jpg",
+    "file": "src/assets/products/official/maharani-henna-1.jpg",
+    "sha256": "c73cf34312949e07744f363cdd1167fe7f400c64a5065e79a6b2b6f3e9238fd3"
+  },
+  {
+    "id": "maharani-henna-2",
+    "name": "マハラニヘナ (機械挽き)",
+    "productPage": "https://maharani.jp/henna_kikai.html",
+    "sourcePage": "https://maharani.jp/henna_kikai.html",
+    "imageUrl": "https://maharani.jp/img8/NR/NR_100g.jpg",
+    "file": "src/assets/products/official/maharani-henna-2.jpg",
+    "sha256": "43ee2fde77ee11a0db1a8d939f17a8a9cee57118d875688a8d829b10494f192d"
+  },
+  {
+    "id": "maharani-henna-3",
+    "name": "オーガニック ヘナコンシーラー",
+    "productPage": "https://maharani.jp/henna_concealer.html",
+    "sourcePage": "https://maharani.jp/henna_concealer.html",
+    "imageUrl": "https://maharani.jp/img7/concealer/consealer_1.jpg",
+    "file": "src/assets/products/official/maharani-henna-3.jpg",
+    "sha256": "29ca89106cdd72a54c98b10af9c4341176c7951885a9ad48708dace3d569788d"
+  },
+  {
+    "id": "maharani-indigo-0",
+    "name": "インディゴ",
+    "productPage": "https://maharani.jp/indigo.html",
+    "sourcePage": "https://maharani.jp/indigo.html",
+    "imageUrl": "https://maharani.jp/img8/indigo/100g.jpg",
+    "file": "src/assets/products/official/maharani-indigo-0.jpg",
+    "sha256": "342e6d55eb9a786a676a50c41f9f0b7b9cf578d5080895fcdc4ced4d02a40fc5"
+  },
+  {
+    "id": "maharani-herbalcolor-0",
+    "name": "ハーバルカラー1 ライトブラウン",
+    "productPage": "https://maharani.jp/HerbalColor1_lightbrown.html",
+    "sourcePage": "https://maharani.jp/HerbalColor1_lightbrown.html",
+    "imageUrl": "https://maharani.jp/img8/HR/HR1.jpg",
+    "file": "src/assets/products/official/maharani-herbalcolor-0.jpg",
+    "sha256": "503016f234c0cb8b97d330b9d15ecbe118e6bba6d2b5fe48cd02f6eea45b8622"
+  },
+  {
+    "id": "maharani-herbalcolor-1",
+    "name": "ハーバルカラー3 ブラウン",
+    "productPage": "https://maharani.jp/HerbalColor3_brown.html",
+    "sourcePage": "https://maharani.jp/HerbalColor3_brown.html",
+    "imageUrl": "https://maharani.jp/img8/HR/HR3.jpg",
+    "file": "src/assets/products/official/maharani-herbalcolor-1.jpg",
+    "sha256": "969bf8e991c99baa6f59c822bdcd30b92cbce8641a822746ec3e31414c972b77"
+  },
+  {
+    "id": "maharani-herbalcolor-2",
+    "name": "ハーバルカラー5 ダークブラウン",
+    "productPage": "https://maharani.jp/HerbalColor5_darkbrown.html",
+    "sourcePage": "https://maharani.jp/HerbalColor5_darkbrown.html",
+    "imageUrl": "https://maharani.jp/img8/HR/HR5.jpg",
+    "file": "src/assets/products/official/maharani-herbalcolor-2.jpg",
+    "sha256": "5823610840e3b674430d31bbccf12fea6cf609fc551678bb4b55adb9b3a61f4e"
+  },
+  {
+    "id": "maharani-herbalcolor-3",
+    "name": "ハーバルカラー7 ソフトブラック",
+    "productPage": "https://maharani.jp/HerbalColor7_softblack.html",
+    "sourcePage": "https://maharani.jp/HerbalColor7_softblack.html",
+    "imageUrl": "https://maharani.jp/img8/HR/HR7.jpg",
+    "file": "src/assets/products/official/maharani-herbalcolor-3.jpg",
+    "sha256": "ca35dfb97c8b521b72d21ce0a998c6f3a11b1de31a050f9541765e0b9d228de7"
+  },
+  {
+    "id": "maharani-herbalcolor-4",
+    "name": "ハーバルカラー9 ブルーブラック",
+    "productPage": "https://maharani.jp/HerbalColor9_blueblack.html",
+    "sourcePage": "https://maharani.jp/HerbalColor9_blueblack.html",
+    "imageUrl": "https://maharani.jp/img8/HR/HR9.jpg",
+    "file": "src/assets/products/official/maharani-herbalcolor-4.jpg",
+    "sha256": "2f0dc6c0286c0e1a554908603fde15b29985025e100bbaeabae6e0b78a6cd908"
+  },
+  {
+    "id": "maharani-colortreatment-0",
+    "name": "カラートリートメント花ブレンド",
+    "productPage": "https://maharani.jp/HHC_flower.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=1",
+    "imageUrl": "https://maharani.jp/img/CTFR/CTFL_N.jpg",
+    "file": "src/assets/products/official/maharani-colortreatment-0.jpg",
+    "sha256": "53d7ea2fbdb1a749de29f14b9135aad3c97d0308780878a8d7bf8f1d39562595",
+    "previousImageUrl": "https://maharani.jp/img/CTFR/CTFL_Nm.jpg"
+  },
+  {
+    "id": "maharani-kaorukami-0",
+    "name": "ハーブシャンプー 香る髪",
+    "productPage": "https://maharani.jp/kaorukami.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=4",
+    "imageUrl": "https://maharani.jp/img/kk/KK100.jpg",
+    "file": "src/assets/products/official/maharani-kaorukami-0.jpg",
+    "sha256": "6d4d3a8921f52f605d6b81801cbd6d676104899fd06044c5b0df6c73e444689b",
+    "previousImageUrl": "https://maharani.jp/img/kk/KK100m.jpg"
+  },
+  {
+    "id": "maharani-kaorukami-1",
+    "name": "ハーブシャンプー 香る髪プラス",
+    "productPage": "https://maharani.jp/kkp.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=4",
+    "imageUrl": "https://maharani.jp/img/kkp/kkp100g.jpg",
+    "file": "src/assets/products/official/maharani-kaorukami-1.jpg",
+    "sha256": "c3346176249c4e7421b158da54aa8c42ca4b20fb21e2260288de1fe90bc5abdc",
+    "previousImageUrl": "https://maharani.jp/img/kkp/kkp100gm.jpg"
+  },
+  {
+    "id": "maharani-kaorukami-2",
+    "name": "ハーブシャンプー 香る髪ベーシック",
+    "productPage": "https://maharani.jp/kkb.html",
+    "sourcePage": "https://maharani.jp/kkb.html",
+    "imageUrl": "https://maharani.jp/img/kkb/kkbm.jpg",
+    "file": "src/assets/products/official/maharani-kaorukami-2.jpg",
+    "sha256": "f67eb2187da691ba7a74aaf2ea089289a4a09a1a133565edf12664cd07cb84db"
+  },
+  {
+    "id": "maharani-floral-0",
+    "name": "香る髪ラベンダー",
+    "productPage": "https://maharani.jp/KKL.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=4",
+    "imageUrl": "https://maharani.jp/img/KKL/KKL.jpg",
+    "file": "src/assets/products/official/maharani-floral-0.jpg",
+    "sha256": "35f36dec1c599dcf8e7182e5d4525e2bfa9a975ddb4a0bd1e5dd0c959f483d92",
+    "previousImageUrl": "https://maharani.jp/img/KKL/KKLm.jpg"
+  },
+  {
+    "id": "maharani-floral-1",
+    "name": "香る髪アロマプラス",
+    "productPage": "https://maharani.jp/kkap.html",
+    "sourcePage": "https://maharani.jp/kkap.html",
+    "imageUrl": "https://maharani.jp/img/kkap/KKAPm.jpg",
+    "file": "src/assets/products/official/maharani-floral-1.jpg",
+    "sha256": "d9e5a6f1b6d3048728040b0f9c0ff16d4b9f0df1bef6ff3ebe95b143457f5201"
+  },
+  {
+    "id": "maharani-floral-2",
+    "name": "香る髪花ブレンド",
+    "productPage": "https://maharani.jp/kkf.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=4",
+    "imageUrl": "https://maharani.jp/img/kkf/KKF.jpg",
+    "file": "src/assets/products/official/maharani-floral-2.jpg",
+    "sha256": "7ddfe4d2005e032ebbf3897250a0d6666616bab0599d5bda773f4623f9a7267e",
+    "previousImageUrl": "https://maharani.jp/img/kkf/KKFm.jpg"
+  },
+  {
+    "id": "maharani-refresh-0",
+    "name": "香る髪オレンジ２",
+    "productPage": "https://maharani.jp/KO.html",
+    "sourcePage": "https://maharani.jp/KO.html",
+    "imageUrl": "https://maharani.jp/img/KKO/KO2m.jpg",
+    "file": "src/assets/products/official/maharani-refresh-0.jpg",
+    "sha256": "07c989af5945cd8d06583ef4c9f2c97965b86bfb881e9e4702d56baa3069c4ca"
+  },
+  {
+    "id": "maharani-refresh-1",
+    "name": "香る髪ペパーミント",
+    "productPage": "https://maharani.jp/kkpep.html",
+    "sourcePage": "https://maharani.jp/kkpep.html",
+    "imageUrl": "https://maharani.jp/img/kkpep/kkpepm.jpg",
+    "file": "src/assets/products/official/maharani-refresh-1.jpg",
+    "sha256": "e81b86ffbf02f56e59c103f6af0c99fb45468bfa73faf15679072d56ebb9a940"
+  },
+  {
+    "id": "maharani-refresh-2",
+    "name": "香る髪オイリースカルプ",
+    "productPage": "https://maharani.jp/kkoily.html",
+    "sourcePage": "https://maharani.jp/kkoily.html",
+    "imageUrl": "https://maharani.jp/img/kkoily/kkoilm.jpg",
+    "file": "src/assets/products/official/maharani-refresh-2.jpg",
+    "sha256": "6d92686e88f2c31856e15cdcd5119e75a49957677c10b586c2691da3e494087d"
+  },
+  {
+    "id": "maharani-special-0",
+    "name": "ヘナシカ洗髪粉",
+    "productPage": "https://maharani.jp/henashika.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=4",
+    "imageUrl": "https://maharani.jp/img/henashika/HS01.jpg",
+    "file": "src/assets/products/official/maharani-special-0.jpg",
+    "sha256": "62392991951a798bd04efb10df5dc13d0f7c7cc00501514d4fea313b90570e5d",
+    "previousImageUrl": "https://maharani.jp/img/henashika/HS01m.jpg"
+  },
+  {
+    "id": "maharani-special-1",
+    "name": "ニュー香る髪",
+    "productPage": "https://maharani.jp/KKN.html",
+    "sourcePage": "https://maharani.jp/KKN.html",
+    "imageUrl": "https://maharani.jp/img/KKN/KKNm.jpg",
+    "file": "src/assets/products/official/maharani-special-1.jpg",
+    "sha256": "7aeb51dec6ec97a9f39c1d132962b9026a6cd69fae90bc4fbc6134fa3c4c3d3b"
+  },
+  {
+    "id": "maharani-colorless-0",
+    "name": "カラーレストリートメント (カッシア)",
+    "productPage": "https://maharani.jp/cassia.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=5",
+    "imageUrl": "https://maharani.jp/img/cassia/100g.jpg",
+    "file": "src/assets/products/official/maharani-colorless-0.jpg",
+    "sha256": "ebb83cffecd7a263f40fe875326167463e15357169fadbd0011aad00d9ae2a55",
+    "previousImageUrl": "https://maharani.jp/img/cassia/100gm.jpg"
+  },
+  {
+    "id": "maharani-colorless-1",
+    "name": "カラーレス花ブレンド",
+    "productPage": "https://maharani.jp/CLTF.html",
+    "sourcePage": "https://maharani.jp/CLTF.html",
+    "imageUrl": "https://maharani.jp/img7/CLTF/CTFL.jpg",
+    "file": "src/assets/products/official/maharani-colorless-1.jpg",
+    "sha256": "9acedd9b387e6784dfcc95c2f417c4f278ccce4a08fc815b7bb8962f11fdfdd8"
+  },
+  {
+    "id": "maharani-oil-0",
+    "name": "マハラニ ヘアケアオイル",
+    "productPage": "https://maharani.jp/maharani-oil.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=5",
+    "imageUrl": "https://maharani.jp/img/rkoils/hc/RKHC.jpg",
+    "file": "src/assets/products/official/maharani-oil-0.jpg",
+    "sha256": "dc87a20674dd6b06b3e448a631b86f8f83eb76990ae659d320f74c87403d11ce"
+  },
+  {
+    "id": "maharani-oil-1",
+    "name": "マハラニ ヘアケアオイル FB",
+    "productPage": "https://maharani.jp/RKFB.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=5",
+    "imageUrl": "https://maharani.jp/img7/oils/FB/HCFBm.jpg",
+    "file": "src/assets/products/official/maharani-oil-1.jpg",
+    "sha256": "3a34bb2b73342a15466a66b07dbb08230ca8cdaca4e0ad80c53992b841c24799"
+  },
+  {
+    "id": "maharani-herbs-0",
+    "name": "マハラニ シカカイ",
+    "productPage": "https://maharani.jp/shikekai.html",
+    "sourcePage": "https://maharani.jp/shikekai.html",
+    "imageUrl": "https://maharani.jp/img/shikakai/shikakai_100gm.jpg",
+    "file": "src/assets/products/official/maharani-herbs-0.jpg",
+    "sha256": "322e8efa2bcadbfa113981e0851799e3946cc9e4364433c7afaf4fea6c87b231"
+  },
+  {
+    "id": "maharani-herbs-1",
+    "name": "マハラニ アムラ",
+    "productPage": "https://maharani.jp/amla.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=5",
+    "imageUrl": "https://maharani.jp/img/amla/Amla100g.jpg",
+    "file": "src/assets/products/official/maharani-herbs-1.jpg",
+    "sha256": "59e20ebc09d39da67329f6510e126c78db24a37cb978e21c792081deb31e2b11",
+    "previousImageUrl": "https://maharani.jp/img/amla/Amla100gm.jpg"
+  },
+  {
+    "id": "maharani-herbs-2",
+    "name": "マハラニ カチュールスガンディ",
+    "productPage": "https://maharani.jp/kachur.html",
+    "sourcePage": "https://maharani.jp/kachur.html",
+    "imageUrl": "https://maharani.jp/img8/SINGLE/kachur/HK01.jpg",
+    "file": "src/assets/products/official/maharani-herbs-2.jpg",
+    "sha256": "e883577b794e62512fa9d15fcd8f1d9977aba8ba0c4a398d2d81e102d3fff2d5"
+  },
+  {
+    "id": "maharani-herbs-3",
+    "name": "マハラニ ニーム",
+    "productPage": "https://maharani.jp/neem.html",
+    "sourcePage": "https://maharani.jp/neem.html",
+    "imageUrl": "https://maharani.jp/img/neem/NEEMm.jpg",
+    "file": "src/assets/products/official/maharani-herbs-3.jpg",
+    "sha256": "56ab44f74af43e7ba00443bde215c5ce0612fedd02e60427646c602bda2cbd57"
+  },
+  {
+    "id": "maharani-bodywash-0",
+    "name": "マハラニ ムルタニミッティ",
+    "productPage": "https://maharani.jp/multani.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=5",
+    "imageUrl": "https://maharani.jp/img/multani/MM.jpg",
+    "file": "src/assets/products/official/maharani-bodywash-0.jpg",
+    "sha256": "084f9f5b68d0b376ddbbd043863649cad5aa5c6516ccc9a01aab345a7f387ab3",
+    "previousImageUrl": "https://maharani.jp/img/multani/MMm.jpg"
+  },
+  {
+    "id": "maharani-rose-0",
+    "name": "無農薬ローズ粉末",
+    "productPage": "https://maharani.jp/rose.html",
+    "sourcePage": "https://maharani.jp/rose.html",
+    "imageUrl": "https://maharani.jp/img7/atharva/rose/RS05.jpg",
+    "file": "src/assets/products/official/maharani-rose-0.jpg",
+    "sha256": "2600883fa226ca1837b058fd2d2628b7889160da469dd0ed96ed9ec92f863dca"
+  },
+  {
+    "id": "atharva-head-oil-0",
+    "name": "アタルバ ヘッドマッサージオイル",
+    "productPage": "https://maharani.jp/atharva_headmassageOil.html",
+    "sourcePage": "https://maharani.jp/atharva_headmassageOil.html",
+    "imageUrl": "https://maharani.jp/img7/atharva/headmassageOil/HMO/HMOm.jpg",
+    "file": "src/assets/products/official/atharva-head-oil-0.jpg",
+    "sha256": "62723aa4dd2e4a44b42827feffaa46415dd846e9f1fb566f144ea5ac435dbac1"
+  },
+  {
+    "id": "atharva-head-oil-1",
+    "name": "ヘッドマッサージオイル・リラックス",
+    "productPage": "https://maharani.jp/atharva_headmassageOil_X.html",
+    "sourcePage": "https://maharani.jp/atharva_headmassageOil_X.html",
+    "imageUrl": "https://maharani.jp/img7/atharva/headmassageOil/HMOX/HMX.jpg",
+    "file": "src/assets/products/official/atharva-head-oil-1.jpg",
+    "sha256": "fdb53b54757d339ba877d52f85313d03554b3a860ba455fc8174fea4dec843c0"
+  },
+  {
+    "id": "atharva-head-oil-2",
+    "name": "ヘッドマッサージオイル R",
+    "productPage": "https://maharani.jp/atharva_headmassageoilR.html",
+    "sourcePage": "https://maharani.jp/atharva_headmassageoilR.html",
+    "imageUrl": "https://maharani.jp/img/atharva/HMOR/HMOR_N.jpg",
+    "file": "src/assets/products/official/atharva-head-oil-2.jpg",
+    "sha256": "714038cef2ae352d4a44d6574ff683ae9347339758565d7d37b385552692ff2d"
+  },
+  {
+    "id": "atharva-head-oil-3",
+    "name": "アタルバ ヘアオイル",
+    "productPage": "https://maharani.jp/atharva_hairoil.html",
+    "sourcePage": "https://maharani.jp/atharva_hairoil.html",
+    "imageUrl": "https://maharani.jp/img8/AT/HO/HO.jpg",
+    "file": "src/assets/products/official/atharva-head-oil-3.jpg",
+    "sha256": "c1e0d649075188f826082e1e9d51748dae80a772bf0df82bffacf4090c43f37f"
+  },
+  {
+    "id": "atharva-head-powder-0",
+    "name": "アタルバ 洗髪粉",
+    "productPage": "https://maharani.jp/atharva_shampoo.html",
+    "sourcePage": "https://maharani.jp/atharva_shampoo.html",
+    "imageUrl": "https://maharani.jp/img7/atharva/hairwash/pouch.jpg",
+    "file": "src/assets/products/official/atharva-head-powder-0.jpg",
+    "sha256": "899aea48a6e462989dbd6da1b2d2b85691fcdbc9f1a759ab72785bb33e9b25cc"
+  },
+  {
+    "id": "atharva-body-oil-0",
+    "name": "アタルバ CBLマッサージオイル",
+    "productPage": "https://maharani.jp/atharva_CBL.html",
+    "sourcePage": "https://maharani.jp/atharva_CBL.html",
+    "imageUrl": "https://maharani.jp/img/atharva/cbl/CBL50.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-0.jpg",
+    "sha256": "a1243cfc08c2d2a47b61fa1aa2daba9f7a041fe0a4de577cefb3cf7c75283794"
+  },
+  {
+    "id": "atharva-body-oil-1",
+    "name": "アタルバ セサミオイル",
+    "productPage": "https://maharani.jp/atharva_sesame.html",
+    "sourcePage": "https://maharani.jp/atharva_sesame.html",
+    "imageUrl": "https://maharani.jp/img/atharva/sesame/sasame_N.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-1.jpg",
+    "sha256": "8f47761e3fce6ed3a9ddc0b6284bf8b0ae6da0f97cc933c07daee6c888032221"
+  },
+  {
+    "id": "atharva-body-oil-2",
+    "name": "アタルバ ニームオイル",
+    "productPage": "https://maharani.jp/atharva_neem.html",
+    "sourcePage": "https://maharani.jp/atharva_neem.html",
+    "imageUrl": "https://maharani.jp/img/atharva/neem/AT10.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-2.jpg",
+    "sha256": "78c424812f1df0347db79d5bf9d74131c165d37bc7c774e517b77e5ed8fd6953"
+  },
+  {
+    "id": "atharva-body-oil-3",
+    "name": "アタルバ ベビーオイル",
+    "productPage": "https://maharani.jp/babyOil.html",
+    "sourcePage": "https://maharani.jp/babyOil.html",
+    "imageUrl": "https://maharani.jp/img/atharva/baby/BabyOil_N.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-3.jpg",
+    "sha256": "d2d73901340bde8e94616e11081e5bca759bd09272b18568580b0ddfe2324784"
+  },
+  {
+    "id": "atharva-body-oil-4",
+    "name": "マッサージオイル NR",
+    "productPage": "https://maharani.jp/atharva_nir.html",
+    "sourcePage": "https://maharani.jp/atharva_nir.html",
+    "imageUrl": "https://maharani.jp/img/atharva/NR/NR.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-4.jpg",
+    "sha256": "0e0875f50d1381c6c075f39084c77c344e9e5818e1eb0c0e2202e77a611500f7"
+  },
+  {
+    "id": "atharva-body-oil-5",
+    "name": "ピッタ・マッサージオイル",
+    "productPage": "https://maharani.jp/pittaoil.html",
+    "sourcePage": "https://maharani.jp/pittaoil.html",
+    "imageUrl": "https://maharani.jp/henna/img/atharva/pkv/pitta_N.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-5.jpg",
+    "sha256": "227bf78e26a01d6abc6d3111250d9d8eb680fdda464dde10d5a06e7a6de4ec64"
+  },
+  {
+    "id": "atharva-body-oil-6",
+    "name": "カファ・マッサージオイル",
+    "productPage": "https://maharani.jp/kaphaoil.html",
+    "sourcePage": "https://maharani.jp/kaphaoil.html",
+    "imageUrl": "https://maharani.jp/img/atharva/pkv/kapha_N.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-6.jpg",
+    "sha256": "1271c9310da38fafb634a252496e9bf38a584b15fb3dd76b5b6d91eb9aab7893"
+  },
+  {
+    "id": "atharva-body-oil-7",
+    "name": "ヴァータ・マッサージオイル",
+    "productPage": "https://maharani.jp/vataoil.html",
+    "sourcePage": "https://maharani.jp/vataoil.html",
+    "imageUrl": "https://maharani.jp/img/atharva/pkv/vata.jpg",
+    "file": "src/assets/products/official/atharva-body-oil-7.jpg",
+    "sha256": "593fb903630703c702c79dfc9a73da7f158bac8f91555e80a98d326a33b1f0d8"
+  },
+  {
+    "id": "atharva-body-powder-0",
+    "name": "アタルバ ハーバルスクラブ",
+    "productPage": "https://maharani.jp/atharva_scrub.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=6",
+    "imageUrl": "https://maharani.jp/img/atharva/scrub/pouch.jpg",
+    "file": "src/assets/products/official/atharva-body-powder-0.jpg",
+    "sha256": "91376d05ffbbabe66fd877086d03c17fb07aa0e000bdd5cc370c41edc4fecc32",
+    "previousImageUrl": "https://maharani.jp/img/atharva/scrub/pouch_M.jpg"
+  },
+  {
+    "id": "atharva-skin-cream-0",
+    "name": "アタルバ フェイスクリーム R",
+    "productPage": "https://maharani.jp/facecream.html",
+    "sourcePage": "https://maharani.jp/facecream.html",
+    "imageUrl": "https://maharani.jp/img/atharva/FC/FCJOCA.jpg",
+    "file": "src/assets/products/official/atharva-skin-cream-0.jpg",
+    "sha256": "a8f30d2911ae1dfd0851bfdf2f14245ce67f601a1ea8b34478fe10c0436fc95a"
+  },
+  {
+    "id": "atharva-skin-cream-1",
+    "name": "アタルバ フェイスクリーム K",
+    "productPage": "https://maharani.jp/facecream.html",
+    "sourcePage": "https://maharani.jp/facecream.html",
+    "imageUrl": "https://maharani.jp/img7/atharva/FC/FCK.jpg",
+    "file": "src/assets/products/official/atharva-skin-cream-1.jpg",
+    "sha256": "aa48acd113a22bef60c8e0aad0a80b2cf1127de918362b522f7bff8f31e03bf9"
+  },
+  {
+    "id": "atharva-skin-cream-2",
+    "name": "アタルバ スキンクリーム",
+    "productPage": "https://maharani.jp/skincream.html",
+    "sourcePage": "https://maharani.jp/skincream.html",
+    "imageUrl": "https://maharani.jp/img/atharva/SC/SCLG.jpg",
+    "file": "src/assets/products/official/atharva-skin-cream-2.jpg",
+    "sha256": "266d0d45214b79188683446d77bf95451763142b05b982ca81db9053d6273858"
+  },
+  {
+    "id": "atharva-skin-powder-0",
+    "name": "アタルバ ハーバルフェイスパック",
+    "productPage": "https://maharani.jp/atharva_facepack.html",
+    "sourcePage": "https://maharani.jp/herb_all.cgi?id=6",
+    "imageUrl": "https://maharani.jp/img/atharva/facepack/AT23.jpg",
+    "file": "src/assets/products/official/atharva-skin-powder-0.jpg",
+    "sha256": "19168d393561c73998756dee0dd320667701e79331084f0bda2e97fb8c0c4b82",
+    "previousImageUrl": "https://maharani.jp/img/atharva/facepack/AT23m.jpg"
+  },
+  {
+    "id": "atharva-skin-powder-1",
+    "name": "フェイスパック R",
+    "productPage": "https://maharani.jp/facepackR.html",
+    "sourcePage": "https://maharani.jp/facepackR.html",
+    "imageUrl": "https://maharani.jp/img/atharva/facepackR/RS06.jpg",
+    "file": "src/assets/products/official/atharva-skin-powder-1.jpg",
+    "sha256": "65859b0276c1b7357d3d063ee3f05d29d52bb156c6d18dd4d7c83322f08296dc"
+  },
+  {
+    "id": "atharva-point-care-0",
+    "name": "イェシティマドゥオイル",
+    "productPage": "https://maharani.jp/atharva_yas.html",
+    "sourcePage": "https://maharani.jp/atharva_yas.html",
+    "imageUrl": "https://maharani.jp/henna/img/atharva/yasthi/AT14.jpg",
+    "file": "src/assets/products/official/atharva-point-care-0.jpg",
+    "sha256": "1a060e104a4e0b827e345cb5a57dfac8d15006c9bd592576391530b38f675acb"
+  }
+]

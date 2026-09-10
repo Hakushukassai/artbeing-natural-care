@@ -7,6 +7,7 @@ import { Reveal } from "./Reveal";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 import { details, type DetailKey } from "@/data/details";
 import { site } from "@/data/site";
+import { ProductPhoto } from "./ProductPhoto";
 export function ProductDetail({ id }: { id: DetailKey }) {
   const p = details[id];
   return (
@@ -24,14 +25,7 @@ export function ProductDetail({ id }: { id: DetailKey }) {
         </div>
         <section className={`detail-hero shell detail-${id}`}>
           <div className="detail-photo">
-            <img
-              src={p.image}
-              alt={`${p.name}の原料・ケアイメージ`}
-              fetchPriority="high"
-              width={900}
-              height={1100}
-            />
-            <small>原料・ケアのイメージ</small>
+            <ProductPhoto src={p.image} alt={`${p.name}の商品写真`} variant="detail" priority />
           </div>
           <div className="detail-summary">
             <Link className="detail-brand" to="/products/maharani">
@@ -130,7 +124,7 @@ export function ProductDetail({ id }: { id: DetailKey }) {
                         | "/products/shampoo"
                     }
                   >
-                    <img src={d.image} alt="" loading="lazy" width={200} height={200} />
+                    <ProductPhoto src={d.image} variant="related" />
                     <div>
                       <small>Maharani</small>
                       <h3>{d.name}</h3>
