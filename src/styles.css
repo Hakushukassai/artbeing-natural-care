@@ -2804,16 +2804,18 @@
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  /* 見出しとブランドの入口をひとまとまりにして、写真の中ほどに置く */
   grid-template-areas:
+    ". photo"
     "title photo"
-    "brands photo";
-  grid-template-rows: auto 1fr;
+    "brands photo"
+    ". photo";
+  grid-template-rows: 1fr auto auto 1.2fr;
   column-gap: clamp(40px, 6vw, 96px);
   padding-top: 48px;
 }
 .home-hero h1 {
   grid-area: title;
-  margin-top: 28px;
   font: 400 clamp(28px, 2.6vw, 38px) / 1.65 var(--serif);
   letter-spacing: 0.06em;
 }
@@ -2826,7 +2828,7 @@
 }
 .home-hero-photo img {
   width: 100%;
-  aspect-ratio: 520 / 400;
+  aspect-ratio: 600 / 478;
   object-fit: cover;
   border-radius: 3px;
 }
@@ -2837,8 +2839,7 @@
 }
 .hero-brands {
   grid-area: brands;
-  align-self: end;
-  margin: 40px 0 34px;
+  margin: 44px 0 0;
   padding: 0;
   list-style: none;
   border-top: 1px solid var(--border);
@@ -2884,6 +2885,9 @@
 
 .home-cares {
   padding-top: 104px;
+}
+.home-hero + .home-colors {
+  margin-top: 88px;
 }
 .home-care-row {
   display: grid;
@@ -2996,6 +3000,16 @@
 .home-origin .quiet-link {
   color: #dfe6d6;
 }
+.origin-lead {
+  margin: 0 0 36px;
+}
+.origin-lead img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 62%;
+  border-radius: 3px;
+}
 .origin-steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3077,6 +3091,15 @@
   }
   .home-hero-photo {
     max-width: none;
+  }
+  .home-hero + .home-colors {
+    margin-top: 64px;
+  }
+  .origin-lead {
+    margin-bottom: 26px;
+  }
+  .origin-lead img {
+    aspect-ratio: 3 / 2;
   }
   .hero-brands {
     margin: 26px 0 0;

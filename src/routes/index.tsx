@@ -9,7 +9,8 @@ import { hairColors } from "@/data/hair-colors";
 import { catalogProducts, displayProductName } from "@/data/catalog";
 import { productImages } from "@/data/product-images";
 import { pageMeta } from "@/data/site";
-import harvestImage from "@/assets/origin/harvest.jpg";
+import heroProductImage from "@/assets/real/hero-product.jpg";
+import fieldImage from "@/assets/origin/field.jpg";
 import farmImage from "@/assets/origin/farm.jpg";
 import buyingImage from "@/assets/origin/buying.jpg";
 import stoneMillImage from "@/assets/origin/stone-mill.jpg";
@@ -86,14 +87,15 @@ function Home() {
         <section className="home-hero shell" aria-labelledby="home-title">
           <h1 id="home-title">髪と肌の、ナチュラルケア。</h1>
           <figure className="home-hero-photo">
+            {/* トップは人を置かず商品を主役にする。すぐ下の仕上がりの色へ「葉→商品→色」でつなぐ */}
             <img
-              src={harvestImage}
-              alt="ヘナ畑で葉を摘む人たち"
-              width={520}
-              height={400}
+              src={heroProductImage}
+              alt="ヘナの葉の上に置いたハーバルカラーの袋"
+              width={600}
+              height={478}
               fetchPriority="high"
             />
-            <figcaption>インド・ソジャットのヘナ農園</figcaption>
+            <figcaption>ハーバルカラー1 ライトブラウン</figcaption>
           </figure>
           <ul className="hero-brands">
             {brands.map((brand) => (
@@ -110,6 +112,7 @@ function Home() {
             ))}
           </ul>
         </section>
+        <HomeColors />
         <nav className="home-cares shell" aria-labelledby="cares-title">
           <div className="quiet-heading">
             <h2 id="cares-title">用途から探す</h2>
@@ -131,7 +134,6 @@ function Home() {
             ))}
           </div>
         </nav>
-        <HomeColors />
         <section className="home-origin" aria-labelledby="origin-title">
           <div className="shell">
             <div className="quiet-heading">
@@ -140,6 +142,15 @@ function Home() {
                 私たちについて <ArrowRight size={17} />
               </Link>
             </div>
+            <figure className="origin-lead">
+              <img
+                src={fieldImage}
+                alt="ヘナ畑で葉を摘む人たち"
+                loading="lazy"
+                width={1600}
+                height={1067}
+              />
+            </figure>
             <ol className="origin-steps">
               {origin.map((step, index) => (
                 <Reveal key={step.text} tag="li" delay={index * 80}>
