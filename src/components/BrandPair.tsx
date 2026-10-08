@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
-import maharaniImage from "@/assets/product-henna.jpg";
-import atharvaImage from "@/assets/brand-atharva.jpg";
+// 公式サイトの写真：それぞれのブランドの商品だけを、原料と一緒に写したもの
+import maharaniImage from "@/assets/real/maharani-brand.jpg";
+import atharvaImage from "@/assets/real/atharva-brand.jpg";
 
 export function BrandPair() {
   return (
@@ -27,7 +28,7 @@ export function BrandPair() {
         <Reveal key={brand.en}>
           <Link to={brand.to} className={`brand-card ${brand.color}`}>
             <div className="brand-photo">
-              <img src={brand.image} alt="" loading="lazy" width={900} height={700} />
+              <img src={brand.image} alt="" loading="lazy" width={750} height={441} />
             </div>
             <div className="brand-card-body">
               <div className="brand-name">

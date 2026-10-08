@@ -5,7 +5,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PageIntro } from "@/components/PageIntro";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useOpenProduct } from "@/components/ProductPanel";
+import { catalogProducts, displayProductName } from "@/data/catalog";
 import { guides } from "@/data/guides";
+import { hairColors } from "@/data/hair-colors";
 import { pageMeta, site } from "@/data/site";
 export const Route = createFileRoute("/guide")({
   component: Guide,
@@ -18,6 +21,7 @@ export const Route = createFileRoute("/guide")({
 function Guide() {
   const hash = useRouterState({ select: (s) => s.location.hash });
   const active = guides.find((g) => g.id === hash) || guides[0];
+  const openProduct = useOpenProduct();
   return (
     <>
       <Header />
@@ -86,47 +90,23 @@ function Guide() {
           </div>
           <div>
             <div className="color-options">
-              {[
-                {
-                  name: "オレンジ系",
-                  product: "ヘナ",
-                  color: "#a54d28",
-                  url: "https://maharani.jp/henna.html",
-                },
-                {
-                  name: "ライトブラウン",
-                  product: "ハーバルカラー1",
-                  color: "#986439",
-                  url: "https://maharani.jp/HerbalColor1_lightbrown.html",
-                },
-                {
-                  name: "ブラウン",
-                  product: "ハーバルカラー3",
-                  color: "#70472f",
-                  url: "https://maharani.jp/HerbalColor3_brown.html",
-                },
-                {
-                  name: "ダークブラウン",
-                  product: "ハーバルカラー5",
-                  color: "#493425",
-                  url: "https://maharani.jp/HerbalColor5_darkbrown.html",
-                },
-                {
-                  name: "ソフトブラック",
-                  product: "ハーバルカラー7",
-                  color: "#2e2c27",
-                  url: "https://maharani.jp/HerbalColor7_softblack.html",
-                },
-              ].map((c) => (
-                <a key={c.name} href={c.url} target="_blank" rel="noreferrer">
-                  <span className="color-swatch" style={{ background: c.color }} />
-                  <span>{c.name}</span>
-                  <small>
-                    {c.product}
-                    <ArrowUpRight size={12} />
-                  </small>
-                </a>
-              ))}
+              {hairColors.map((color) => {
+                const product = catalogProducts.find((p) => p.item.name === color.product)!;
+                return (
+                  <button
+                    key={color.name}
+                    aria-haspopup="dialog"
+                    onClick={(event) => openProduct(product, event.currentTarget)}
+                  >
+                    <span
+                      className="color-swatch"
+                      style={{ background: `${color.color} center / cover url(${color.photo})` }}
+                    />
+                    <span>{color.name}</span>
+                    <small>{displayProductName(product.item.name).replace(/\s.*$/, "")}</small>
+                  </button>
+                );
+              })}
             </div>
             <p className="color-note">
               色は白髪に対する仕上がりのイメージです。白髪の割合や元の髪色、髪質、染め方によって異なり、画面の色を保証するものではありません。
@@ -151,7 +131,7 @@ function GuideSteps({ guide }: { guide: (typeof guides)[number] }) {
       </div>
       <div className="stepper-layout">
         <div className="stepper-image" key={`${guide.id}-${step}`}>
-          <img src={current.image} alt={`${current.title}のイメージ`} width={800} height={650} />
+          <img src={current.image} alt={current.title} width={800} height={650} />
           <span>
             STEP {String(step + 1).padStart(2, "0")} / {String(guide.steps.length).padStart(2, "0")}
           </span>
@@ -222,7 +202,6 @@ function Preparation() {
   return (
     <section className="preparation shell">
       <div>
-        <p className="step-label">03 / BEFORE YOU BEGIN</p>
         <h2>始める前の、小さな準備。</h2>
         <p>
           天然由来でも、アレルギーが起こる場合があります。

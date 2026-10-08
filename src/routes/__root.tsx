@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { ProductPanelProvider } from "@/components/ProductPanel";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -69,6 +70,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  // どのページでも ?item= で商品の詳細パネルを開ける
+  validateSearch: (search: Record<string, unknown>): { item?: string } =>
+    typeof search.item === "string" ? { item: search.item } : {},
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -128,9 +132,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div key={pathname} className="page-fade">
-        <Outlet />
-      </div>
+      <ProductPanelProvider>
+        <div key={pathname} className="page-fade">
+          <Outlet />
+        </div>
+      </ProductPanelProvider>
     </QueryClientProvider>
   );
 }

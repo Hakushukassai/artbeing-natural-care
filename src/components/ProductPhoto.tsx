@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import { productPhotoFrames } from "@/data/product-photo-frames";
 
 export function ProductPhoto({
@@ -13,6 +13,21 @@ export function ProductPhoto({
   priority?: boolean;
 }) {
   const frame = productPhotoFrames[src];
+  const img = useRef<HTMLImageElement>(null);
+  // 読み込み中だけ写真を隠し、届いたらふわっと出す。JavaScript がなければ常に見える。
+  useEffect(() => {
+    const el = img.current;
+    if (!el || el.complete) return;
+    el.dataset.loading = "";
+    const done = () => delete el.dataset.loading;
+    el.addEventListener("load", done);
+    el.addEventListener("error", done);
+    return () => {
+      el.removeEventListener("load", done);
+      el.removeEventListener("error", done);
+      done();
+    };
+  }, [src]);
   return (
     <div className={`product-photo product-photo-${variant}`}>
       <div
@@ -20,6 +35,7 @@ export function ProductPhoto({
         style={{ "--photo-ratio": frame ? frame.width / frame.height : 0.8 } as CSSProperties}
       >
         <img
+          ref={img}
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}

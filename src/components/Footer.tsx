@@ -35,9 +35,7 @@ export function Footer() {
             </a>
           </nav>
         </div>
-        <p className="image-notice">
-          商品画像は公式サイトの掲載写真です。一部のイメージ画像にはAI生成素材を使用しています。
-        </p>
+        <p className="image-notice">写真は公式サイトの掲載写真です。</p>
         <div className="footer-bottom">
           <small>© {new Date().getFullYear()} ARTBEING INC.</small>
           <div>

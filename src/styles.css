@@ -1296,14 +1296,14 @@
 }
 .color-options {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-.color-options > a {
+.color-options > :is(a, button) {
   text-align: center;
   padding: 5px;
 }
-.color-options > a:hover {
+.color-options > :is(a, button):hover {
   background: var(--sand);
 }
 .color-swatch {
@@ -1316,10 +1316,10 @@
   box-shadow: 0 0 0 1px var(--border);
   transition: transform 0.3s var(--ease);
 }
-.color-options > a:hover .color-swatch {
+.color-options > :is(a, button):hover .color-swatch {
   transform: translateY(-4px);
 }
-.color-options > a > span:not(.color-swatch) {
+.color-options > :is(a, button) > span:not(.color-swatch) {
   font-size: 12px;
   display: block;
 }
@@ -1843,10 +1843,10 @@
   .color-options {
     gap: 5px;
   }
-  .color-options > a {
+  .color-options > :is(a, button) {
     padding: 2px;
   }
-  .color-options > a > span:not(.color-swatch) {
+  .color-options > :is(a, button) > span:not(.color-swatch) {
     font-size: 11px;
     line-height: 1.8;
   }
@@ -2044,7 +2044,7 @@
   border: 0;
   padding: 0;
 }
-.product-tile-button:hover .product-tile-brand {
+.product-tile-brand {
   display: block;
   margin: 16px 0 5px;
   font-size: 0.75rem;
@@ -2301,26 +2301,12 @@
 .quiet-heading h2 {
   font-size: 26px;
 }
-.home-care-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 38px;
-  padding-block: 66px;
-  font-size: 14px;
-}
-.home-care-links > span {
-  color: var(--muted-foreground);
-  margin-right: 12px;
-}
-.home-care-links a,
 .brand-switch-link a {
   padding-block: 12px;
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-color: #afbaa6;
 }
-.home-care-links a:hover,
 .brand-switch-link a:hover {
   color: #87613e;
   text-decoration-color: currentColor;
@@ -2510,14 +2496,6 @@
   .quiet-heading h2 {
     font-size: 23px;
   }
-  .home-care-links {
-    padding-block: 45px;
-    gap: 4px 24px;
-  }
-  .home-care-links > span {
-    flex-basis: 100%;
-    margin-bottom: 7px;
-  }
   .brand-index-title h1 {
     font-size: 45px;
     gap: 18px;
@@ -2620,7 +2598,7 @@
   font-variant-numeric: tabular-nums;
 }
 .brand-category-nav a:hover,
-.brand-category-nav a[aria-current="location"] {
+.brand-category-nav a[data-current] {
   color: var(--foreground);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -2748,4 +2726,454 @@
 }
 .product-photo-related .product-photo-subject {
   width: min(82cqw, calc(105cqw * var(--photo-ratio)));
+}
+
+/* 2026-10 導線の見直し：髪色の丸・写真の読み込み・詳細パネルの要点・分類の目次 */
+.color-options > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  word-break: keep-all;
+}
+.color-options > button .color-swatch {
+  width: 100%;
+}
+.about-year {
+  font: 400 15px/1.8 var(--serif);
+  letter-spacing: 0.12em;
+}
+.product-tile-photo {
+  position: relative;
+  display: block;
+}
+.product-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 3px var(--border);
+  vertical-align: -2px;
+}
+.product-tile-photo .product-swatch {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.product-focus-category .product-swatch {
+  margin: 0 10px 0 3px;
+}
+.product-tile :is(h3, h4) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.product-photo-subject {
+  background: #f2efe8;
+}
+.product-photo .product-photo-subject img {
+  transition: opacity 450ms var(--ease);
+}
+.product-photo .product-photo-subject img[data-loading] {
+  opacity: 0;
+}
+.product-focus-facts {
+  margin-top: 26px;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.product-focus-facts > div {
+  display: grid;
+  grid-template-columns: 7.5em minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+.product-focus-facts dt {
+  color: var(--muted-foreground);
+}
+
+/*
+ * トップ：公式サイトに掲載している産地の本物の写真を軸にする。
+ * 写真は横700〜800pxほどなので、元の大きさを超えて引き伸ばさない。
+ * 区切りごとに背景（白・砂色・深い緑）と形を変えてメリハリを付ける。
+ */
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  grid-template-areas:
+    "title photo"
+    "brands photo";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(40px, 6vw, 96px);
+  padding-top: 48px;
+}
+.home-hero h1 {
+  grid-area: title;
+  margin-top: 28px;
+  font: 400 clamp(28px, 2.6vw, 38px) / 1.65 var(--serif);
+  letter-spacing: 0.06em;
+}
+.home-hero-photo {
+  grid-area: photo;
+  justify-self: end;
+  width: 100%;
+  max-width: 580px;
+  margin: 0;
+}
+.home-hero-photo img {
+  width: 100%;
+  aspect-ratio: 520 / 400;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.home-hero-photo figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.hero-brands {
+  grid-area: brands;
+  align-self: end;
+  margin: 40px 0 34px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+.hero-brand {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 2px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-brand strong {
+  font: 400 clamp(32px, 2.8vw, 42px) / 1.1 var(--english);
+  color: #87613e;
+  transition: color 0.3s ease;
+}
+.hero-brand.atharva strong {
+  color: #706544;
+}
+.hero-brand > span {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+.hero-brand small {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+}
+.hero-brand svg {
+  color: var(--muted-foreground);
+  transition: transform 0.3s var(--ease);
+}
+.hero-brand:hover strong {
+  color: var(--foreground);
+}
+.hero-brand:hover svg {
+  transform: translateX(5px);
+  color: var(--foreground);
+}
+
+.home-cares {
+  padding-top: 104px;
+}
+.home-care-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.home-care {
+  display: block;
+}
+.home-care .product-photo {
+  aspect-ratio: 1;
+}
+.home-care:hover .product-photo-subject {
+  transform: translateY(-3px);
+}
+.home-care-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 15px;
+}
+.home-care-label svg {
+  color: var(--muted-foreground);
+  transition: transform 0.3s var(--ease);
+}
+.home-care:hover .home-care-label {
+  color: #536343;
+}
+.home-care:hover .home-care-label svg {
+  transform: translateX(4px);
+}
+
+.home-colors {
+  margin-top: 104px;
+  padding: 64px 0;
+  background: var(--sand);
+}
+.home-colors-inner {
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) minmax(0, 2.8fr);
+  gap: 48px;
+  align-items: center;
+}
+.home-colors-intro h2 {
+  font-size: 24px;
+  line-height: 1.6;
+}
+.home-colors-intro p {
+  margin: 8px 0 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.hair-swatches {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hair-swatches button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 8px 8px 12px;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+.hair-swatches button:hover,
+.hair-swatches button:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgb(38 61 50 / 0.1);
+}
+/* 色見本：白い毛を実際に染めた束の写真。札の幅いっぱいに見せる */
+.hair-swatch {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--sand);
+}
+.hair-swatch-name {
+  margin-top: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.hair-swatch-product {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+.home-origin {
+  margin-top: 104px;
+  padding: 80px 0 96px;
+  background: var(--primary);
+  color: #e9ede2;
+}
+.home-origin .quiet-heading h2 {
+  color: #f6f5ee;
+}
+.home-origin .quiet-link {
+  color: #dfe6d6;
+}
+.origin-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.origin-photo {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #24392b;
+}
+.origin-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.origin-step-number {
+  display: block;
+  margin-top: 18px;
+  font: 400 28px / 1 var(--english);
+  color: #cdb98d;
+}
+.origin-steps p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.9;
+  /* 日本語を文節で折り返す（対応していないブラウザではふつうに折り返す） */
+  word-break: auto-phrase;
+}
+
+@media (max-width: 1050px) {
+  /* 横に並ぶ目次は、ヘッダーの下に残して横に送れるようにする */
+  .brand-category-nav {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 5;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: var(--background);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .brand-category-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .brand-category-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .brand-product-group {
+    scroll-margin-top: 58px;
+  }
+  .home-colors-inner {
+    display: block;
+  }
+  .home-colors-intro {
+    margin-bottom: 26px;
+  }
+}
+@media (max-width: 900px) {
+  .origin-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 16px;
+  }
+}
+@media (max-width: 760px) {
+  .home-hero {
+    display: block;
+    padding-top: 20px;
+  }
+  .home-hero h1 {
+    margin: 0 0 18px;
+    font-size: 23px;
+    letter-spacing: 0.03em;
+  }
+  .home-hero-photo {
+    max-width: none;
+  }
+  .hero-brands {
+    margin: 26px 0 0;
+  }
+  .hero-brand {
+    gap: 16px;
+    padding: 14px 2px;
+  }
+  .hero-brand strong {
+    font-size: 30px;
+  }
+  .home-cares {
+    padding-top: 72px;
+  }
+  .home-care-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 14px;
+  }
+  .home-care-label {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .home-colors {
+    margin-top: 80px;
+    padding: 48px 0 40px;
+  }
+  .home-colors-intro {
+    margin-bottom: 22px;
+  }
+  .home-colors-intro h2 {
+    font-size: 22px;
+  }
+  .hair-swatches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .hair-swatches button {
+    padding: 6px 6px 10px;
+  }
+  .hair-swatch-name {
+    font-size: 12px;
+  }
+  .home-origin {
+    margin-top: 80px;
+    padding: 56px 0 64px;
+  }
+  .origin-step-number {
+    margin-top: 12px;
+    font-size: 24px;
+  }
+  .origin-steps p {
+    font-size: 13px;
+  }
+  .product-tile-photo .product-swatch {
+    top: 9px;
+    right: 9px;
+    width: 12px;
+    height: 12px;
+  }
+  .product-focus-facts > div {
+    grid-template-columns: 6.5em minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-photo .product-photo-subject img,
+  .hero-brand svg,
+  .hair-swatches button,
+  .hair-swatch {
+    transition: none;
+  }
+}
+
+/* 私たちについて：本物の写真2枚を並べる（元の写真が横800pxほどのため、1枚を全幅にしない） */
+.about-landscape {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.about-landscape figure {
+  margin: 0;
+}
+.about-landscape img {
+  aspect-ratio: 4 / 3;
+  object-position: center;
+  border-radius: 3px;
+}
+.about-landscape figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+@media (max-width: 760px) {
+  .about-landscape {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .about-landscape img {
+    aspect-ratio: 4 / 3;
+  }
 }

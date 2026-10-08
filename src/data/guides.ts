@@ -1,12 +1,17 @@
-import hennaMix from "@/assets/guides/henna-mix.webp";
-import hennaApply from "@/assets/guides/henna-apply.webp";
-import hennaWait from "@/assets/guides/henna-wait.webp";
-import hennaRinse from "@/assets/guides/henna-rinse.webp";
-import stepMix from "@/assets/step-mix.jpg";
-import stepApply from "@/assets/step-apply.jpg";
-import stepRinse from "@/assets/step-rinse.jpg";
-import powder from "@/assets/herbal-shampoo-powder-960.webp";
-import oil from "@/assets/product-headoil.jpg";
+// 公式サイトの使い方のページに掲載している写真。透かしや文字のない部分を切り出したもの
+import hennaMix from "@/assets/real/henna-mix.jpg";
+import hennaApply from "@/assets/real/henna-apply.jpg";
+import hennaWait from "@/assets/real/henna-wait.jpg";
+import hennaRinse from "@/assets/real/henna-rinse.jpg";
+import indigoHennaFirst from "@/assets/real/indigo-henna-first.jpg";
+import indigoApply from "@/assets/real/indigo-apply.jpg";
+import indigoResult from "@/assets/real/indigo-result.jpg";
+import shampooMix from "@/assets/real/shampoo-mix.jpg";
+import shampooApply from "@/assets/real/shampoo-apply.jpg";
+import shampooFinish from "@/assets/real/shampoo-finish.jpg";
+import oilSesame from "@/assets/real/oil-sesame.jpg";
+import oilSpoon from "@/assets/real/oil-spoon.jpg";
+import oilMassage from "@/assets/real/oil-massage.jpg";
 export const guides = [
   {
     id: "henna",
@@ -54,19 +59,19 @@ export const guides = [
         title: "先にヘナで染める",
         text: "まずヘナで白髪を染め、十分に洗い流します。インディゴだけを白髪に使うと青緑系の色になる場合があります。",
         tip: "二つの原料それぞれでパッチテストを。",
-        image: stepApply,
+        image: indigoHennaFirst,
       },
       {
         title: "溶いたら速やかに塗る",
         text: "インディゴの粉末を、説明書に従ってお湯で溶きます。ヘナと違い、寝かせずに速やかに塗布してください。",
         tip: "塗布する準備が整ってから粉末を溶きます。",
-        image: stepMix,
+        image: indigoApply,
       },
       {
         title: "色を確かめ、すすぐ",
         text: "記載の時間を目安に置いて、十分にすすぎます。染まり方には個人差があるので、初回は目立たない毛束で確認してください。",
         tip: "色の変化を見ながら、自分の髪に合う使い方を。",
-        image: stepRinse,
+        image: indigoResult,
       },
     ],
   },
@@ -82,19 +87,19 @@ export const guides = [
         title: "使う分だけを溶く",
         text: "商品に記載された使用量を目安に、粉末をお湯で溶きます。溶いたものは保管せず、その都度使い切ります。",
         tip: "粉末は湿気を避け、袋をしっかり閉じて保管。",
-        image: powder,
+        image: shampooMix,
       },
       {
         title: "頭皮と髪になじませる",
         text: "予洗いした頭皮と髪に、溶いたハーブをなじませます。指の腹でやさしく洗い、目に入らないようにご注意ください。",
         tip: "泡立ちの量ではなく、頭皮全体になじませることを意識。",
-        image: stepApply,
+        image: shampooApply,
       },
       {
         title: "よくすすいで仕上げる",
         text: "粉末が残らないよう、お湯で十分にすすぎます。ヘナを含む商品は明るい髪に色がつく場合があるため、配合も確認してください。",
         tip: "髪や頭皮の状態に合わせて、使用量を調整します。",
-        image: stepRinse,
+        image: shampooFinish,
       },
     ],
   },
@@ -110,19 +115,19 @@ export const guides = [
         title: "用途と成分を確かめる",
         text: "ヘアオイル、ヘッドマッサージオイル、ボディオイルは、それぞれ配合や用途が異なります。使う部位に合う商品を選び、使用上の注意をご確認ください。",
         tip: "自然由来でもアレルギーが起こる場合があります。",
-        image: oil,
+        image: oilSesame,
       },
       {
         title: "少量をやさしくなじませる",
         text: "適量を手に取り、指の腹で頭皮をやさしくマッサージします。毛先のお手入れには、髪の量に合わせて少量をのばしてください。",
         tip: "つけすぎると洗い流しにくくなるので、少量ずつ。",
-        image: oil,
+        image: oilSpoon,
       },
       {
         title: "お手入れを仕上げる",
         text: "頭皮マッサージ後の洗い流しやヘナとの併用は、各商品の案内に従ってください。ボディ・スキンケア製品も用途に合う方法で使います。",
         tip: "心地よい使用感を確かめながら、自分のペースで。",
-        image: stepRinse,
+        image: oilMassage,
       },
     ],
   },

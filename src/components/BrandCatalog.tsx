@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
 import { ProductGrid } from "./ProductGrid";
@@ -23,6 +23,40 @@ export function BrandCatalog({ brand, other }: { brand: Brand; other: Brand }) {
         .filter((category) => category.products.length),
     }))
     .filter((group) => group.categories.length);
+  const groupIds = groups.map((group) => group.id).join(",");
+  const [active, setActive] = useState(hash);
+  const nav = useRef<HTMLElement>(null);
+  // 画面の上から3割の線を越えた最後の見出しを「いま見ている分類」にする
+  useEffect(() => {
+    const ids = groupIds ? groupIds.split(",") : [];
+    function update() {
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      let next = ids[0];
+      for (const id of ids) {
+        const top = document.getElementById(id)?.getBoundingClientRect().top ?? Infinity;
+        if (top <= window.innerHeight * 0.3) next = id;
+      }
+      setActive(atBottom && window.scrollY > 0 ? ids[ids.length - 1] : next);
+    }
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [groupIds]);
+  // 横に並ぶ目次では、いまの分類が見える位置まで目次だけを動かす
+  useEffect(() => {
+    const bar = nav.current;
+    const link = bar?.querySelector<HTMLElement>("[data-current]");
+    if (!bar || !link || bar.scrollWidth <= bar.clientWidth) return;
+    bar.scrollTo({
+      left: link.offsetLeft - (bar.clientWidth - link.offsetWidth) / 2,
+      behavior: "smooth",
+    });
+  }, [active]);
   function clearSearch() {
     setQuery("");
     input.current?.focus();
@@ -60,13 +94,18 @@ export function BrandCatalog({ brand, other }: { brand: Brand; other: Brand }) {
         </div>
         {groups.length ? (
           <div className="brand-collection-layout">
-            <nav className="brand-category-nav" aria-label={`${brand.name}の商品カテゴリ`}>
+            <nav
+              ref={nav}
+              className="brand-category-nav"
+              aria-label={`${brand.name}の商品カテゴリ`}
+            >
               {groups.map((group) => (
                 <Link
                   key={group.id}
                   to={brand.path}
                   hash={group.id}
-                  aria-current={hash === group.id ? "location" : undefined}
+                  activeOptions={{ includeHash: true }}
+                  data-current={active === group.id ? "" : undefined}
                 >
                   {group.ja}
                   <span>

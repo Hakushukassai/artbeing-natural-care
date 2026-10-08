@@ -6,7 +6,8 @@ import { PageIntro } from "@/components/PageIntro";
 import { Reveal } from "@/components/Reveal";
 import { BrandPair } from "@/components/BrandPair";
 import { pageMeta, site } from "@/data/site";
-import hero from "@/assets/natural-care-hero-1440.webp";
+import plantingImage from "@/assets/real/planting.jpg";
+import farmImage from "@/assets/origin/farm.jpg";
 export const Route = createFileRoute("/about")({
   component: About,
   head: () =>
@@ -21,19 +22,27 @@ function About() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         <PageIntro title="私たちについて" />
+        {/* 公式サイトに掲載している産地の写真。元の大きさを超えて広げないよう2枚を並べる */}
         <div className="about-landscape shell">
-          <img
-            src={hero}
-            alt="葉とハーブの粉末、オイルのイメージ"
-            width={1536}
-            height={1024}
-            fetchPriority="high"
-          />
+          <figure>
+            <img
+              src={plantingImage}
+              alt="ヘナの苗を植える人たち"
+              width={778}
+              height={520}
+              fetchPriority="high"
+            />
+            <figcaption>2010年、アートビーングのヘナの植樹</figcaption>
+          </figure>
+          <figure>
+            <img src={farmImage} alt="ヘナの枝を持つ二人" width={800} height={636} />
+            <figcaption>インドの契約農園</figcaption>
+          </figure>
         </div>
         <section className="section shell about-story">
           <Reveal>
             <h2>原料と製法</h2>
-            <span className="about-year">Since 2003</span>
+            <span className="about-year">2003年から</span>
           </Reveal>
           <Reveal>
             <p>

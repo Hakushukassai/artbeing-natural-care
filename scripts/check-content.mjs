@@ -109,8 +109,13 @@ if (siteUrl) {
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${path}: one primary heading`);
     assert.match(html, /id="main-content"/, `${path}: keyboard skip target`);
     assert.doesNotMatch(html, /Lovable App|kusa &amp; mi|info@example\.com/);
+    if (path === "/") {
+      // トップ：用途の入口4つ、髪色の見本6色、ヘナが届くまでの4枚
+      assert.equal((html.match(/class="home-care[" ]/g) || []).length, 4, "/: care entries");
+      assert.equal((html.match(/class="hair-swatch"/g) || []).length, 6, "/: hair color swatches");
+      assert.equal((html.match(/class="origin-photo"/g) || []).length, 4, "/: origin photographs");
+    }
     const expectedTiles = {
-      "/": 4,
       "/products": 52,
       "/products/maharani": 32,
       "/products/atharva": 20,

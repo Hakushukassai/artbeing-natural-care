@@ -25,7 +25,9 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 - `src/data/products.ts`：ブランド、用途、シリーズ、52商品の説明と公式ストアへのリンク。
 - `src/data/catalog.ts`：商品単位への展開と、ブランド・用途・複数語検索。
 - `src/data/product-images.ts`：52商品の個別画像。実写への差し替えもここで管理。
-- `src/components/ProductGrid.tsx`：写真・商品名の一覧と、商品ごとの詳細パネル。
+- `src/components/ProductGrid.tsx`：写真・商品名の一覧。
+- `src/components/ProductPanel.tsx`：全ページで共通の商品詳細パネル。開いている商品はURLの `?item=` で表す。
+- `src/data/hair-colors.ts`：髪色の見本。ガイド・トップ・商品タイル・詳細パネルで共有。
 - `src/components/BrandCatalog.tsx`：ブランド内の商品を用途・カテゴリ別に整理。カテゴリへの移動とブランド内検索。
 - `src/data/details.ts`：ヘナ・インディゴ・香る髪の詳細ページ。
 - `src/data/guides.ts`：ケアごとの使い方ガイド。
@@ -34,7 +36,7 @@ node scripts/check-content.mjs http://127.0.0.1:8080
 - `src/styles.css`：色・書体・余白・画面幅ごとのレイアウト・モーション。
 - `docs/redesign-notes.md`：調査元、設計意図、写真の差し替え方、確認事項。
 
-商品写真は `src/data/product-images.ts` の商品名と画像の対応で管理し、一覧・詳細パネル・詳しい商品紹介へ反映します。52商品は公式サイトから取得した写真を使用し、元のJPEGを加工せず `src/assets/products/official/` に保存しています。出典とチェックサムは `docs/official-product-images.json`、差し替え方は [公式画像の管理](docs/official-product-images.md) を参照してください。ヘナの使い方などのイメージ画像は引き続きAI生成素材です。
+商品写真は `src/data/product-images.ts` の商品名と画像の対応で管理し、一覧・詳細パネル・詳しい商品紹介へ反映します。52商品は公式サイトから取得した写真を使用し、元のJPEGを加工せず `src/assets/products/official/` に保存しています。出典とチェックサムは `docs/official-product-images.json`、差し替え方は [公式画像の管理](docs/official-product-images.md) を参照してください。トップ・私たちについて・ガイドの写真も、公式サイトに掲載している本物の写真から切り出したものです（`src/assets/origin/`・`src/assets/hair/`・`src/assets/real/`）。出どころは `docs/redesign-notes.md` に記録しています。
 
 商品価格や在庫は掲載せず、公式ストアの該当商品へ直接案内します。購入・お問い合わせは公式サイトで完結します。このサイトには購入・送信フォームや架空の動画再生操作はありません。
 
