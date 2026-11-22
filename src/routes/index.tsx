@@ -18,6 +18,7 @@ import careHeadSmall from "@/assets/photo/care-head-600.webp";
 import careSkin from "@/assets/photo/care-skin-1200.webp";
 import careSkinSmall from "@/assets/photo/care-skin-600.webp";
 import maharaniLogo from "@/assets/logo/maharani.svg";
+import atharvaLogo from "@/assets/logo/atharva.webp";
 import fieldImage from "@/assets/origin/field.jpg";
 import farmImage from "@/assets/origin/farm.jpg";
 import buyingImage from "@/assets/origin/buying.jpg";
@@ -113,10 +114,8 @@ function Home() {
               </li>
               <li>
                 <Link to="/products/atharva" className="brand-door">
-                  <strong lang="en">ATHARVA</strong>
-                  <span>
-                    <span className="sr-only">アタルバ </span>オイル・スキンケア
-                  </span>
+                  <img src={atharvaLogo} alt="アタルバ" width={560} height={206} />
+                  <span>オイル・スキンケア</span>
                   <ArrowRight size={20} aria-hidden />
                 </Link>
               </li>

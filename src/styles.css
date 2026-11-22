@@ -2983,12 +2983,6 @@
   width: 132px;
   height: auto;
 }
-.brand-door strong {
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--leaf);
-}
 .brand-door svg {
   transition: transform 0.3s var(--ease);
 }
@@ -3056,9 +3050,6 @@
   }
   .brand-door img {
     width: 100px;
-  }
-  .brand-door strong {
-    font-size: 19px;
   }
   .top-hero + .home-colors {
     margin-top: 48px;
