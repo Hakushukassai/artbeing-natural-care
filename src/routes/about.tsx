@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Leaf, HandHeart, Sprout } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PageIntro } from "@/components/PageIntro";
@@ -8,12 +8,29 @@ import { BrandPair } from "@/components/BrandPair";
 import { pageMeta, site } from "@/data/site";
 import plantingImage from "@/assets/real/planting.jpg";
 import farmImage from "@/assets/origin/farm.jpg";
+import leaves1200 from "@/assets/photo/about-leaves-1200.webp";
+import leaves600 from "@/assets/photo/about-leaves-600.webp";
+
+const values = [
+  {
+    title: "産地を知る",
+    text: "ヘナの産地で生産者とつながり、葉の買い付けや製造を確認。届くまでの背景を大切にします。",
+  },
+  {
+    title: "製法を大切にする",
+    text: "石臼で挽くヘナ、アーユルヴェーダ製法のオイル。素材に合う方法を大切にしたケアを届けます。",
+  },
+  {
+    title: "商品情報を伝える",
+    text: "配合と使い方を商品ごとにお伝えします。植物由来でも体質に合わない場合があることも書いています。",
+  },
+];
 export const Route = createFileRoute("/about")({
   component: About,
   head: () =>
     pageMeta(
-      "私たちの想い",
-      "原料を知る、つくる人を知る。株式会社アートビーングが、マハラニとアタルバを通してお届けするナチュラルケアの背景。",
+      "私たちについて",
+      "株式会社アートビーングは2003年からインドの産地に通い、マハラニのヘナとアタルバのオイルを作っています。原料と製法、大切にしていることをご紹介します。",
     ),
 });
 function About() {
@@ -56,33 +73,30 @@ function About() {
             </a>
           </Reveal>
         </section>
-        <section className="philosophy-values">
+        <section className="about-values">
           <div className="shell">
-            <h2>大切にしていること</h2>
+            <figure>
+              <img
+                src={leaves600}
+                srcSet={`${leaves600} 600w, ${leaves1200} 1200w`}
+                sizes="(max-width: 760px) 100vw, 40vw"
+                alt="乾燥させたヘナの葉を両手にのせて確かめている"
+                loading="lazy"
+                width={1200}
+                height={1500}
+              />
+              <figcaption>乾燥させたヘナの葉(インド・ソジャット)</figcaption>
+            </figure>
             <div>
-              {[
-                {
-                  Icon: Sprout,
-                  title: "産地を知る",
-                  text: "ヘナの産地で生産者とつながり、葉の買い付けや製造を確認。届くまでの背景を大切にします。",
-                },
-                {
-                  Icon: HandHeart,
-                  title: "製法を大切にする",
-                  text: "石臼で挽くヘナ、アーユルヴェーダ製法のオイル。素材に合う方法を大切にしたケアを届けます。",
-                },
-                {
-                  Icon: Leaf,
-                  title: "商品情報を伝える",
-                  text: "配合も、使い方も、ひとつずつ。植物由来であっても体質に合わない場合があることまで、丁寧にお伝えします。",
-                },
-              ].map(({ Icon, ...v }, i) => (
-                <Reveal key={v.title} delay={i * 80}>
-                  <Icon size={30} strokeWidth={1.2} />
-                  <h3>{v.title}</h3>
-                  <p>{v.text}</p>
-                </Reveal>
-              ))}
+              <h2>大切にしていること</h2>
+              <dl>
+                {values.map((v) => (
+                  <div key={v.title}>
+                    <dt>{v.title}</dt>
+                    <dd>{v.text}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </section>

@@ -32,8 +32,8 @@ export function BrandPair() {
             </div>
             <div className="brand-card-body">
               <div className="brand-name">
-                <h3>{brand.en}</h3>
-                <span>{brand.ja}</span>
+                <h3>{brand.ja}</h3>
+                <span>{brand.en}</span>
               </div>
               <p>{brand.type}</p>
             </div>

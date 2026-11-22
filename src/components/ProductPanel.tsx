@@ -102,14 +102,13 @@ function ProductPanelBody({ product }: { product: CatalogProduct }) {
   return (
     <>
       <p className="product-focus-brand">
-        {brand.reading}
-        <span>{brand.name}</span>
+        {brand.name}
       </p>
       <SheetTitle className="product-focus-title">{displayProductName(item.name)}</SheetTitle>
-      <p className="product-focus-category">
+      <p className={color ? "product-focus-category product-tone" : "product-focus-category"}>
         {color ? (
           <>
-            <span className="product-swatch" style={{ background: color.color }} aria-hidden />
+            <img className="product-tone-hair" src={color.photo} alt="" width={56} height={24} />
             仕上がりの目安は{color.name}
           </>
         ) : (

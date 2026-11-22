@@ -66,8 +66,8 @@ export function BrandCatalog({ brand, other }: { brand: Brand; other: Brand }) {
       <div className={`brand-index-title shell ${brand.key}`}>
         <Breadcrumbs items={[{ label: "商品一覧", to: "/products" }, { label: brand.name }]} />
         <h1>
-          {brand.reading}
-          <span>{brand.name}</span>
+          {brand.name}
+          <span>{brand.reading}</span>
         </h1>
       </div>
       <div id="collection" className="brand-collection shell">

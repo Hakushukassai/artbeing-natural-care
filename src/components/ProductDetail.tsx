@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Droplets, Info, BookOpen } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Info, BookOpen } from "lucide-react";
+import hairOilPhoto from "@/assets/photo/care-head-600.webp";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Breadcrumbs } from "./PageIntro";
@@ -29,7 +30,7 @@ export function ProductDetail({ id }: { id: DetailKey }) {
           </div>
           <div className="detail-summary">
             <Link className="detail-brand" to="/products/maharani">
-              Maharani <span>マハラニ</span>
+              マハラニ
             </Link>
             <h1>{p.name}</h1>
             <p>{p.description}</p>
@@ -126,16 +127,16 @@ export function ProductDetail({ id }: { id: DetailKey }) {
                   >
                     <ProductPhoto src={d.image} variant="related" />
                     <div>
-                      <small>Maharani</small>
+                      <small>マハラニ</small>
                       <h3>{d.name}</h3>
                     </div>
                     <ArrowRight size={20} />
                   </Link>
                 ))}
               <Link to="/products/atharva" hash="head" className="related-oil">
-                <Droplets size={30} strokeWidth={1.2} />
+                <ProductPhoto src={hairOilPhoto} variant="related" />
                 <div>
-                  <small>Atharva</small>
+                  <small>アタルバ</small>
                   <h3>髪と頭皮のオイルケア</h3>
                 </div>
                 <ArrowRight size={20} />

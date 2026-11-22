@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowUpRight, MapPin, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PageIntro } from "@/components/PageIntro";
@@ -38,7 +38,7 @@ function Company() {
             </h2>
             <span className="company-location">
               <MapPin size={17} />
-              YAMANASHI, JAPAN
+              山梨県北杜市
             </span>
           </div>
           <div>
@@ -56,7 +56,6 @@ function Company() {
           </div>
         </section>
         <section className="company-contact shell" id="inquiry">
-          <MessageCircle size={32} strokeWidth={1.25} />
           <h2>お問い合わせ</h2>
           <p>
             製品の使い方、ご購入、卸販売についてのご相談は、

@@ -34,20 +34,24 @@
   --color-amber-soft: #eee6d5;
   --color-leaf: var(--primary);
   --color-leaf-soft: var(--leaf-soft);
-  --font-serif-en: "Cormorant Garamond", Georgia, serif;
-  --font-sans-jp: "Noto Sans JP", sans-serif;
+  --font-serif-en: "Zen Kaku Gothic New", sans-serif;
+  --font-sans-jp: "Zen Kaku Gothic New", sans-serif;
 }
 :root {
-  --background: #fafbf7;
-  --foreground: #263d32;
-  --primary: #2d493a;
+  /* 色は会社のロゴ(赤紫)と商品の写真(葉の緑・ヘナの橙)から取る(2026-11-22) */
+  --background: #fff;
+  --foreground: #231b1f;
+  --primary: #8a3465;
+  --plum-deep: #4d1c38;
+  --leaf: #2f5d2a;
+  --henna: #c9501c;
   --card: #fff;
-  --sand: #f0f1e9;
-  --leaf-soft: #e8eee4;
-  --muted-foreground: #657065;
-  --border: #d9ded4;
-  --serif: "Noto Serif JP", "Yu Mincho", serif;
-  --english: "Cormorant Garamond", Georgia, serif;
+  --sand: #f6f2f0;
+  --leaf-soft: #f4e8ef;
+  --muted-foreground: #6a6065;
+  --border: #e4dcdf;
+  --serif: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  --english: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
   --header-height: 94px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -62,7 +66,8 @@
   }
   body {
     margin: 0;
-    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.9;
     letter-spacing: 0.025em;
@@ -81,12 +86,13 @@
   h2,
   h3,
   h4 {
-    font-weight: 400;
+    font-weight: 700;
   }
   h1,
   h2 {
     font-family: var(--serif);
-    line-height: 1.65;
+    font-weight: 700;
+    line-height: 1.5;
   }
   a {
     text-decoration: none;
@@ -118,7 +124,7 @@
   a:focus-visible,
   button:focus-visible,
   summary:focus-visible {
-    outline: 2px solid #9a642e;
+    outline: 2px solid var(--primary);
     outline-offset: 5px;
   }
   input:focus-visible,
@@ -142,8 +148,8 @@
     flex-shrink: 0;
   }
   ::selection {
-    background: #dce7cb;
-    color: #203c2b;
+    background: var(--leaf-soft);
+    color: var(--foreground);
   }
   [id] {
     scroll-margin-top: calc(var(--header-height) + 26px);
@@ -158,15 +164,6 @@
 }
 .section {
   padding-block: 108px;
-}
-.eyebrow {
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.17em;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: var(--primary);
 }
 .section-heading {
   display: flex;
@@ -215,12 +212,8 @@
   color: white;
 }
 .button-primary:hover {
-  background: #1c3528;
-  box-shadow: 0 5px 18px #24392b18;
-}
-.button-light {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--plum-deep);
+  box-shadow: 0 5px 18px #4d1c3818;
 }
 .button-outline {
   border-color: var(--border);
@@ -234,9 +227,6 @@
 }
 .button:hover svg {
   transform: translateX(4px);
-}
-.mobile-only {
-  display: none;
 }
 .skip-link {
   position: fixed;
@@ -254,7 +244,7 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: #fafbf7f5;
+  background: #fffffff2;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
 }
@@ -279,9 +269,6 @@
   font-size: 44px;
   font-weight: 500;
   letter-spacing: -0.065em;
-}
-.wordmark-dot {
-  color: #9b6c42;
 }
 .wordmark small {
   font-size: 10px;
@@ -328,7 +315,7 @@
   padding: 12px 0 12px 24px;
 }
 .shop-link:hover {
-  color: #9b6c42;
+  color: var(--primary);
 }
 .menu-button {
   display: none;
@@ -415,10 +402,10 @@
   font-family: var(--english);
   font-size: 46px;
   line-height: 1.15;
-  color: #8d4e35;
+  color: var(--primary);
 }
 .atharva .brand-name h3 {
-  color: #826128;
+  color: var(--leaf);
 }
 .brand-name > span {
   font-size: 12px;
@@ -455,34 +442,6 @@
 }
 .page-fade {
   animation: page-in 0.45s var(--ease);
-}
-.anim-fade-up,
-.anim-fade-in,
-.anim-zoom-in {
-  animation: page-in 0.65s var(--ease) both;
-}
-.hover-zoom {
-  overflow: hidden;
-}
-.hover-zoom img {
-  transition: transform 0.7s var(--ease);
-}
-.hover-zoom:hover img {
-  transform: scale(1.03);
-}
-.hover-arrow {
-  display: inline-block;
-  transition: transform 0.3s;
-}
-.group:hover .hover-arrow {
-  transform: translateX(4px);
-}
-.eyebrow-en {
-  font-size: 12px;
-  letter-spacing: 0.13em;
-}
-.font-serif-en {
-  font-family: var(--english);
 }
 @media (max-width: 1200px) {
   .desktop-nav {
@@ -573,13 +532,6 @@
   .section-heading > .text-link {
     margin-top: 14px;
   }
-  .eyebrow {
-    font-size: 11px;
-    margin-bottom: 14px;
-  }
-  .mobile-only {
-    display: initial;
-  }
   .brand-pair {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -623,7 +575,7 @@
     transform 0.75s var(--ease) var(--reveal-delay, 0ms);
 }
 .site-footer {
-  background: #f6f7f1;
+  background: var(--sand);
   border-top: 1px solid var(--border);
 }
 .footer-main {
@@ -650,7 +602,7 @@
 }
 .footer-main nav h3 {
   font:
-    11px Arial,
+    11px var(--english),
     sans-serif;
   letter-spacing: 0.13em;
   margin-bottom: 10px;
@@ -661,12 +613,7 @@
   color: var(--muted-foreground);
 }
 .footer-main nav a:hover {
-  color: #956234;
-}
-.image-notice {
-  color: var(--muted-foreground);
-  font-size: 11px;
-  margin: 20px 0;
+  color: var(--primary);
 }
 .footer-bottom {
   border-top: 1px solid var(--border);
@@ -718,9 +665,6 @@
 .page-intro {
   padding-bottom: 54px;
 }
-.page-intro > .eyebrow {
-  margin-top: 30px;
-}
 .page-intro h1 {
   font-size: clamp(30px, 3.5vw, 48px);
 }
@@ -735,7 +679,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border-bottom: 1px solid #8a9787;
+  border-bottom: 1px solid #b9adb2;
   padding: 12px 0;
 }
 .catalog-search input {
@@ -838,9 +782,6 @@
   .footer-main nav {
     font-size: 13px;
   }
-  .image-notice {
-    font-size: 11px;
-  }
 }
 /* Product detail pages. */
 .detail-hero {
@@ -862,24 +803,20 @@
   left: 20px;
   font-size: 11px;
   color: #fff;
-  background: #263d3299;
+  background: #231b1f99;
   padding: 3px 9px;
 }
 .detail-brand {
   font-family: var(--english);
   font-size: 32px;
-  color: #8d4e35;
+  color: var(--primary);
   line-height: 1.2;
 }
 .detail-brand span {
   font-size: 12px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--english);
   margin-left: 13px;
   color: var(--muted-foreground);
-}
-.detail-summary > .eyebrow {
-  font-size: 10px;
-  margin: 22px 0 14px;
 }
 .detail-summary h1 {
   font-size: clamp(27px, 2.7vw, 38px);
@@ -934,7 +871,7 @@
   padding: 7px 0;
 }
 .detail-nav a:hover {
-  color: #9b6c42;
+  color: var(--primary);
 }
 .detail-features {
   display: grid;
@@ -944,7 +881,7 @@
 .detail-features > div > span {
   font-family: var(--english);
   font-size: 35px;
-  color: #89967d;
+  color: var(--muted-foreground);
 }
 .detail-features h3 {
   font-family: var(--serif);
@@ -996,13 +933,13 @@
   padding: 23px 0 !important;
   font-size: 16px !important;
   line-height: 1.9 !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   gap: 20px;
   transition: color 0.2s !important;
 }
 .faq-trigger:hover {
   text-decoration: none !important;
-  color: #8c633a;
+  color: var(--primary);
 }
 .faq-trigger > span {
   display: flex;
@@ -1012,7 +949,7 @@
 .faq-trigger em {
   font-family: var(--english);
   font-size: 24px;
-  color: #859375;
+  color: var(--muted-foreground);
   font-style: normal;
 }
 .faq-answer {
@@ -1048,7 +985,7 @@
   border: 1px solid var(--border);
 }
 .related-grid > a:hover {
-  border-color: #75836a;
+  border-color: #b9adb2;
 }
 .related-grid h3 {
   font-size: 17px;
@@ -1058,7 +995,7 @@
 .related-grid small {
   font-family: var(--english);
   font-size: 20px;
-  color: #8d4e35;
+  color: var(--primary);
 }
 .related-grid p {
   font-size: 13px;
@@ -1074,7 +1011,7 @@
   gap: 30px;
 }
 .related-oil small {
-  color: #826128;
+  color: var(--leaf);
 }
 /* Guide, steps and quiet feedback. */
 .guide-first {
@@ -1082,15 +1019,6 @@
   grid-template-columns: 1fr 1.3fr;
   gap: 70px;
   padding: 32px 0 65px;
-}
-.step-label {
-  display: block;
-  font:
-    11px/1.8 Arial,
-    sans-serif;
-  letter-spacing: 0.14em;
-  color: var(--muted-foreground);
-  margin-bottom: 20px;
 }
 .guide-first h2,
 .guide-how > h2 {
@@ -1150,7 +1078,7 @@
 .guide-stepper-heading > span {
   font-family: var(--english);
   font-size: 23px;
-  color: #92683f;
+  color: var(--primary);
 }
 .guide-stepper-heading > h3 {
   font-family: var(--serif);
@@ -1184,7 +1112,7 @@
   bottom: 20px;
   left: 22px;
   font:
-    11px Arial,
+    11px var(--english),
     sans-serif;
   letter-spacing: 0.12em;
   background: var(--background);
@@ -1221,10 +1149,6 @@
 .stepper-copy {
   animation: page-in 0.4s var(--ease);
   flex: 1;
-}
-.stepper-copy > .eyebrow {
-  font-size: 11px;
-  margin-bottom: 10px;
 }
 .stepper-copy h4 {
   font-family: var(--serif);
@@ -1375,7 +1299,7 @@
   height: 22px;
 }
 .preparation-checklist .is-checked {
-  color: #637259;
+  color: var(--leaf);
 }
 .checklist-status {
   display: flex;
@@ -1432,7 +1356,7 @@
 .faq-group h2 {
   font-size: 25px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #94a18c;
+  border-bottom: 1px solid #b9adb2;
 }
 .faq-contact {
   padding: 35px;
@@ -1464,7 +1388,7 @@
   left: 35px;
   color: white;
   text-shadow: 0 2px 20px #0009;
-  font: italic 43px/1 var(--english);
+  font: 700 43px/1 var(--english);
 }
 .about-story {
   display: grid;
@@ -1476,8 +1400,8 @@
 }
 .about-year {
   display: block;
-  font: italic 28px var(--english);
-  color: #8d744f;
+  font: 700 22px var(--english);
+  color: var(--primary);
   margin-top: 35px;
 }
 .about-story p:not(.eyebrow) {
@@ -1485,29 +1409,6 @@
   color: var(--muted-foreground);
   line-height: 2.3;
   margin-bottom: 25px;
-}
-.philosophy-values {
-  background: var(--sand);
-  padding-block: 75px;
-}
-.philosophy-values h2 {
-  font-size: 32px;
-}
-.philosophy-values .shell > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  margin-top: 45px;
-}
-.philosophy-values h3 {
-  font-family: var(--serif);
-  font-size: 21px;
-  margin: 23px 0 18px;
-}
-.philosophy-values p:not(.eyebrow) {
-  font-size: 15px;
-  color: var(--muted-foreground);
-  line-height: 2.1;
 }
 .company-layout {
   display: grid;
@@ -1524,7 +1425,7 @@
   align-items: center;
   gap: 10px;
   font:
-    11px Arial,
+    11px var(--english),
     sans-serif;
   letter-spacing: 0.12em;
   margin-top: 30px;
@@ -1791,17 +1692,6 @@
   .about-year {
     margin-top: 20px;
   }
-  .philosophy-values {
-    padding-block: 55px;
-  }
-  .philosophy-values .shell > div {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .philosophy-values .shell > div > div {
-    padding-bottom: 35px;
-    border-bottom: 1px solid var(--border);
-  }
   .company-layout {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -1953,11 +1843,11 @@
   color: var(--muted-foreground);
 }
 .product-brand-switch button[data-state="on"] {
-  background: #e6ece1;
+  background: var(--leaf-soft);
   color: var(--foreground);
 }
 .product-brand-switch button:hover {
-  background: #eef1e9;
+  background: var(--sand);
 }
 .product-tools {
   display: flex;
@@ -1980,7 +1870,7 @@
   border: 0;
   padding: 8px;
   border-radius: 8px;
-  box-shadow: 0 8px 38px #27382b20;
+  box-shadow: 0 8px 38px #231b1f20;
 }
 .product-purpose-options [role="option"] {
   min-height: 42px;
@@ -2049,16 +1939,16 @@
   margin: 16px 0 5px;
   font-size: 0.75rem;
   letter-spacing: 0.07em;
-  color: #836044;
+  color: var(--primary);
 }
 .product-tile-brand.atharva {
-  color: #706544;
+  color: var(--leaf);
 }
 .product-tile :is(h3, h4) {
   margin-top: 14px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--english);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.9;
   letter-spacing: 0.015em;
 }
@@ -2066,7 +1956,7 @@
   margin-top: 0;
 }
 .product-tile-button:hover :is(h3, h4) {
-  color: #75825b;
+  color: var(--primary);
 }
 .product-focus-sheet {
   background: var(--background);
@@ -2084,18 +1974,18 @@
   display: flex;
   align-items: baseline;
   gap: 14px;
-  font: 1.75rem var(--english);
-  color: #87613e;
+  font: 700 0.875rem var(--english);
+  color: var(--primary);
 }
 .product-focus-brand span {
   font:
-    0.75rem "Noto Sans JP",
+    0.75rem var(--english),
     sans-serif;
   color: var(--muted-foreground);
 }
 .product-focus-title {
   margin-top: 18px;
-  font: 400 1.8rem/1.65 var(--serif);
+  font: 700 1.6rem/1.65 var(--serif);
 }
 .product-focus-category {
   color: var(--muted-foreground);
@@ -2128,7 +2018,7 @@
   font-size: 0.875rem;
   text-decoration: underline;
   text-underline-offset: 5px;
-  text-decoration-color: #a4b29b;
+  text-decoration-color: #c9b3bf;
 }
 .product-focus-caution {
   font-size: 0.875rem;
@@ -2242,7 +2132,7 @@
   padding-block: 14px;
 }
 .mobile-menu nav a:hover {
-  color: #87613e;
+  color: var(--primary);
 }
 .brand-card {
   border: 0;
@@ -2266,20 +2156,12 @@
   font-size: 14px;
   line-height: 1.8;
 }
-.home-collection {
-  padding-top: 45px;
-}
-.home-collection-title,
 .quiet-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 32px;
-}
-.home-collection-title h1 {
-  font-size: clamp(24px, 2.25vw, 34px);
-  letter-spacing: 0.06em;
 }
 .quiet-link {
   display: inline-flex;
@@ -2295,9 +2177,6 @@
 .quiet-link:hover svg {
   transform: translateX(4px);
 }
-.home-products {
-  padding-top: 85px;
-}
 .quiet-heading h2 {
   font-size: 26px;
 }
@@ -2305,10 +2184,10 @@
   padding-block: 12px;
   text-decoration: underline;
   text-underline-offset: 6px;
-  text-decoration-color: #afbaa6;
+  text-decoration-color: #c9b3bf;
 }
 .brand-switch-link a:hover {
-  color: #87613e;
+  color: var(--primary);
   text-decoration-color: currentColor;
 }
 .brand-index-title {
@@ -2319,16 +2198,16 @@
   align-items: baseline;
   gap: 22px;
   margin-top: 12px;
-  font: 400 54px/1.2 var(--english);
-  color: #8d4e35;
+  font: 700 44px/1.2 var(--english);
+  color: var(--primary);
 }
 .brand-index-title.atharva h1 {
-  color: #826128;
+  color: var(--leaf);
 }
 .brand-index-title h1 span {
   color: var(--foreground);
   font:
-    400 14px/1.8 "Noto Sans JP",
+    400 14px/1.8 var(--english),
     sans-serif;
 }
 .brand-index-title > p {
@@ -2380,10 +2259,6 @@
   border: 0;
   background: var(--leaf-soft);
 }
-.image-notice {
-  margin-block: 12px;
-  font-size: 12px;
-}
 .page-intro {
   padding-bottom: 40px;
 }
@@ -2416,7 +2291,7 @@
   background: transparent;
 }
 .related-grid > a:hover {
-  color: #87613e;
+  color: var(--primary);
 }
 .related-grid .related-oil {
   padding-inline: 0;
@@ -2430,10 +2305,6 @@
   border: 0;
 }
 @media (max-width: 1050px) {
-  .home-products .product-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 28px 20px;
-  }
   .footer-main {
     grid-template-columns: 1fr 1fr 1.25fr;
     gap: 24px;
@@ -2443,20 +2314,6 @@
   }
 }
 @media (max-width: 760px) {
-  .home-collection {
-    padding-top: 22px;
-  }
-  .home-collection-title {
-    display: block;
-    margin-bottom: 24px;
-  }
-  .home-collection-title h1 {
-    font-size: 24px;
-    letter-spacing: 0.015em;
-  }
-  .home-collection-title > a {
-    margin-top: 10px;
-  }
   .brand-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -2481,13 +2338,6 @@
   }
   .brand-card p {
     font-size: 13px;
-  }
-  .home-products {
-    padding-top: 54px;
-  }
-  .home-products .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px 18px;
   }
   .quiet-heading {
     margin-bottom: 22px;
@@ -2533,20 +2383,17 @@
   }
 }
 @media (max-width: 359px) {
-  .home-collection-title h1 {
-    font-size: 22px;
-  }
   .brand-name h3 {
     font-size: 31px;
   }
 }
 .product-purpose-select:focus-visible,
 .product-brand-switch button:focus-visible {
-  outline: 2px solid #9a642e;
+  outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
 .product-tile-button:hover :is(h3, h4) {
-  color: #536343;
+  color: var(--primary);
 }
 @media (max-width: 760px) {
   .product-search input {
@@ -2614,7 +2461,7 @@
   margin-top: 100px;
 }
 .brand-product-group > h2 {
-  font: 400 clamp(1.5rem, 2.2vw, 1.85rem)/1.6 var(--serif);
+  font: 700 clamp(1.5rem, 2.2vw, 1.85rem)/1.6 var(--serif);
   margin-bottom: 30px;
 }
 .brand-product-category + .brand-product-category {
@@ -2622,7 +2469,7 @@
 }
 .brand-category-heading {
   font:
-    500 1rem/1.8 "Noto Sans JP",
+    700 1.0625rem/1.8 var(--english),
     sans-serif;
   margin-bottom: 18px;
 }
@@ -2749,30 +2596,36 @@
   position: relative;
   display: block;
 }
-.product-swatch {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 0 3px var(--border);
-  vertical-align: -2px;
+.product-tone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
 }
-.product-tile-photo .product-swatch {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+/* 白い毛を染めた束の写真を、色の札として小さく切り出す */
+.product-tone-hair {
+  flex: none;
+  width: 40px;
+  height: 18px;
+  border-radius: 2px;
+  object-fit: cover;
 }
-.product-focus-category .product-swatch {
-  margin: 0 10px 0 3px;
+.product-focus-category.product-tone {
+  margin-top: 10px;
+  font-size: 0.8125rem;
+}
+.product-focus-category .product-tone-hair {
+  width: 56px;
+  height: 24px;
 }
 .product-tile :is(h3, h4) {
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 .product-photo-subject {
-  background: #f2efe8;
+  background: var(--sand);
 }
 .product-photo .product-photo-subject img {
   transition: opacity 450ms var(--ease);
@@ -2801,107 +2654,14 @@
  * 写真は横700〜800pxほどなので、元の大きさを超えて引き伸ばさない。
  * 区切りごとに背景（白・砂色・深い緑）と形を変えてメリハリを付ける。
  */
-.home-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-  /* 見出しとブランドの入口をひとまとまりにして、写真の中ほどに置く */
-  grid-template-areas:
-    ". photo"
-    "title photo"
-    "brands photo"
-    ". photo";
-  grid-template-rows: 1fr auto auto 1.2fr;
-  column-gap: clamp(40px, 6vw, 96px);
-  padding-top: 48px;
-}
-.home-hero h1 {
-  grid-area: title;
-  font: 400 clamp(28px, 2.6vw, 38px) / 1.65 var(--serif);
-  letter-spacing: 0.06em;
-}
-.home-hero-photo {
-  grid-area: photo;
-  justify-self: end;
-  width: 100%;
-  max-width: 580px;
-  margin: 0;
-}
-.home-hero-photo img {
-  width: 100%;
-  aspect-ratio: 600 / 478;
-  object-fit: cover;
-  border-radius: 3px;
-}
-.home-hero-photo figcaption {
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--muted-foreground);
-}
-.hero-brands {
-  grid-area: brands;
-  margin: 44px 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--border);
-}
-.hero-brand {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 2px;
-  border-bottom: 1px solid var(--border);
-}
-.hero-brand strong {
-  font: 400 clamp(32px, 2.8vw, 42px) / 1.1 var(--english);
-  color: #87613e;
-  transition: color 0.3s ease;
-}
-.hero-brand.atharva strong {
-  color: #706544;
-}
-.hero-brand > span {
-  display: flex;
-  flex-direction: column;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-}
-.hero-brand small {
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--muted-foreground);
-}
-.hero-brand svg {
-  color: var(--muted-foreground);
-  transition: transform 0.3s var(--ease);
-}
-.hero-brand:hover strong {
-  color: var(--foreground);
-}
-.hero-brand:hover svg {
-  transform: translateX(5px);
-  color: var(--foreground);
-}
 
 .home-cares {
   padding-top: 104px;
-}
-.home-hero + .home-colors {
-  margin-top: 88px;
 }
 .home-care-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-}
-.home-care {
-  display: block;
-}
-.home-care .product-photo {
-  aspect-ratio: 1;
-}
-.home-care:hover .product-photo-subject {
-  transform: translateY(-3px);
 }
 .home-care-label {
   display: flex;
@@ -2914,12 +2674,6 @@
 .home-care-label svg {
   color: var(--muted-foreground);
   transition: transform 0.3s var(--ease);
-}
-.home-care:hover .home-care-label {
-  color: #536343;
-}
-.home-care:hover .home-care-label svg {
-  transform: translateX(4px);
 }
 
 .home-colors {
@@ -2966,7 +2720,7 @@
 .hair-swatches button:hover,
 .hair-swatches button:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgb(38 61 50 / 0.1);
+  box-shadow: 0 12px 26px rgb(35 27 31 / 0.1);
 }
 /* 色見本：白い毛を実際に染めた束の写真。札の幅いっぱいに見せる */
 .hair-swatch {
@@ -2992,13 +2746,13 @@
   margin-top: 104px;
   padding: 80px 0 96px;
   background: var(--primary);
-  color: #e9ede2;
+  color: #f3e9ee;
 }
 .home-origin .quiet-heading h2 {
-  color: #f6f5ee;
+  color: #fff;
 }
 .home-origin .quiet-link {
-  color: #dfe6d6;
+  color: #f3e9ee;
 }
 .origin-lead {
   margin: 0 0 36px;
@@ -3023,7 +2777,7 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 3px;
-  background: #24392b;
+  background: var(--plum-deep);
 }
 .origin-photo img {
   width: 100%;
@@ -3034,7 +2788,7 @@
   display: block;
   margin-top: 18px;
   font: 400 28px / 1 var(--english);
-  color: #cdb98d;
+  color: #e8c4d6;
 }
 .origin-steps p {
   margin-top: 8px;
@@ -3080,36 +2834,11 @@
   }
 }
 @media (max-width: 760px) {
-  .home-hero {
-    display: block;
-    padding-top: 20px;
-  }
-  .home-hero h1 {
-    margin: 0 0 18px;
-    font-size: 23px;
-    letter-spacing: 0.03em;
-  }
-  .home-hero-photo {
-    max-width: none;
-  }
-  .home-hero + .home-colors {
-    margin-top: 64px;
-  }
   .origin-lead {
     margin-bottom: 26px;
   }
   .origin-lead img {
     aspect-ratio: 3 / 2;
-  }
-  .hero-brands {
-    margin: 26px 0 0;
-  }
-  .hero-brand {
-    gap: 16px;
-    padding: 14px 2px;
-  }
-  .hero-brand strong {
-    font-size: 30px;
   }
   .home-cares {
     padding-top: 72px;
@@ -3153,19 +2882,12 @@
   .origin-steps p {
     font-size: 13px;
   }
-  .product-tile-photo .product-swatch {
-    top: 9px;
-    right: 9px;
-    width: 12px;
-    height: 12px;
-  }
   .product-focus-facts > div {
     grid-template-columns: 6.5em minmax(0, 1fr);
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .product-photo .product-photo-subject img,
-  .hero-brand svg,
   .hair-swatches button,
   .hair-swatch {
     transition: none;
@@ -3198,5 +2920,236 @@
   }
   .about-landscape img {
     aspect-ratio: 4 / 3;
+  }
+}
+
+/*
+ * トップの作り直し(2026-11-22)。社内の元データの写真を大きく使う。
+ * 最初の画面は横いっぱいの商品の写真。その下に、何の会社かの1文と2ブランドの入口を置く。
+ */
+.wordmark img {
+  width: auto;
+  height: 46px;
+}
+.footer-main .wordmark img {
+  height: 54px;
+}
+.mobile-menu .menu-title img {
+  width: auto;
+  height: 44px;
+}
+.top-hero-photo {
+  width: 100%;
+  height: clamp(380px, 68vh, 760px);
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+.top-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  padding-block: 56px 8px;
+}
+.top-intro h1 {
+  font-size: clamp(30px, 3.5vw, 52px);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+.top-intro p {
+  margin-top: 20px;
+  max-width: 30em;
+  font-size: 16px;
+  color: var(--muted-foreground);
+}
+.brand-doors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--foreground);
+}
+.brand-door {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 112px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.brand-door img {
+  width: 132px;
+  height: auto;
+}
+.brand-door strong {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--leaf);
+}
+.brand-door svg {
+  transition: transform 0.3s var(--ease);
+}
+.brand-door:hover {
+  color: var(--primary);
+}
+.brand-door:hover svg {
+  transform: translateX(6px);
+}
+.top-hero + .home-colors {
+  margin-top: 72px;
+}
+.care-tile {
+  display: block;
+}
+.care-tile img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.care-tile {
+  overflow: clip;
+}
+.care-tile:hover img {
+  transform: scale(1.03);
+}
+.care-tile .home-care-label {
+  font-size: 17px;
+  font-weight: 700;
+}
+.care-tile:hover .home-care-label {
+  color: var(--primary);
+}
+.home-origin {
+  background: var(--plum-deep);
+}
+@media (max-width: 760px) {
+  .wordmark img {
+    height: 36px;
+  }
+  .top-hero-photo {
+    height: 58vh;
+  }
+  .top-intro {
+    display: block;
+    padding-block: 28px 0;
+  }
+  .top-intro h1 {
+    font-size: 27px;
+  }
+  .top-intro p {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+  .brand-doors {
+    margin-top: 28px;
+  }
+  .brand-door {
+    grid-template-columns: 112px minmax(0, 1fr) auto;
+    gap: 16px;
+    min-height: 88px;
+    font-size: 14px;
+  }
+  .brand-door img {
+    width: 100px;
+  }
+  .brand-door strong {
+    font-size: 19px;
+  }
+  .top-hero + .home-colors {
+    margin-top: 48px;
+  }
+  .care-tile .home-care-label {
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .care-tile img,
+  .brand-door svg {
+    transition: none;
+  }
+}
+
+/* 見出しは言葉の切れ目でだけ折り返す */
+.top-intro h1 span {
+  display: inline-block;
+}
+
+/* 私たちについて: 大切にしていること。アイコンを並べず、実物の写真1枚と項目の一覧で見せる */
+.about-values {
+  background: var(--sand);
+  padding-block: 80px;
+}
+.about-values > .shell {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.about-values figure {
+  margin: 0;
+}
+.about-values figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.about-values figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.about-values h2 {
+  font-size: 32px;
+  margin-bottom: 28px;
+}
+.about-values dl {
+  margin: 0;
+}
+.about-values dl > div {
+  display: grid;
+  grid-template-columns: 11em minmax(0, 1fr);
+  gap: 8px 32px;
+  padding-block: 26px;
+  border-top: 1px solid #d9cdd2;
+}
+.about-values dl > div:last-child {
+  border-bottom: 1px solid #d9cdd2;
+}
+.about-values dt {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+.about-values dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted-foreground);
+}
+@media (max-width: 900px) {
+  .about-values {
+    padding-block: 56px;
+  }
+  .about-values > .shell {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-values figure img {
+    aspect-ratio: 4 / 3;
+  }
+  .about-values h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .about-values dl > div {
+    grid-template-columns: 1fr;
+    padding-block: 20px;
   }
 }

@@ -83,9 +83,9 @@ function Guide() {
           <div>
             <h2>仕上がりの色から選ぶ</h2>
             <p>
-              ヘナはオレンジ系。赤みを抑えた色には、
+              ヘナはオレンジ系に染まります。
               <br />
-              インディゴやハーバルカラーという選択肢も。
+              赤みを抑えたい方にはインディゴやハーバルカラーがあります。
             </p>
           </div>
           <div>
@@ -133,7 +133,7 @@ function GuideSteps({ guide }: { guide: (typeof guides)[number] }) {
         <div className="stepper-image" key={`${guide.id}-${step}`}>
           <img src={current.image} alt={current.title} width={800} height={650} />
           <span>
-            STEP {String(step + 1).padStart(2, "0")} / {String(guide.steps.length).padStart(2, "0")}
+            {step + 1} / {guide.steps.length}
           </span>
         </div>
         <div className="stepper-content">
@@ -146,12 +146,11 @@ function GuideSteps({ guide }: { guide: (typeof guides)[number] }) {
                 aria-label={`ステップ${i + 1} ${s.title}`}
                 aria-current={i === step ? "step" : undefined}
               >
-                {i < step ? <Check size={16} /> : String(i + 1).padStart(2, "0")}
+                {i < step ? <Check size={16} /> : i + 1}
               </button>
             ))}
           </div>
           <div className="stepper-copy" key={step} aria-live="polite" aria-atomic="true">
-            <p className="eyebrow">STEP {String(step + 1).padStart(2, "0")}</p>
             <h4>{current.title}</h4>
             <p>{current.text}</p>
             <div className="stepper-tip">
@@ -202,7 +201,7 @@ function Preparation() {
   return (
     <section className="preparation shell">
       <div>
-        <h2>始める前の、小さな準備。</h2>
+        <h2>始める前の準備</h2>
         <p>
           天然由来でも、アレルギーが起こる場合があります。
           <br />

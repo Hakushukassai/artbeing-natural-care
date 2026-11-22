@@ -16,9 +16,9 @@ export const guides = [
   {
     id: "henna",
     label: "ヘナで染める",
-    brand: "Maharani",
+    brand: "マハラニ",
     title: "ヘナの基本の使い方",
-    intro: "使う分だけを溶いて、髪にたっぷり。時間をかけて、植物の色を重ねます。",
+    intro: "使う分だけをお湯で溶いて髪に塗り、時間を置いて染めます。",
     url: "https://maharani.jp/howto_henna.html",
     steps: [
       {
@@ -50,8 +50,8 @@ export const guides = [
   {
     id: "indigo",
     label: "インディゴを重ねる",
-    brand: "Maharani",
-    title: "ヘナの赤みを、落ち着かせる。",
+    brand: "マハラニ",
+    title: "インディゴの二度染め",
     intro: "ヘナで染めた後にインディゴを使う、二度染めの流れをご紹介します。",
     url: "https://maharani.jp/howto_henna_indigo.html",
     steps: [
@@ -78,8 +78,8 @@ export const guides = [
   {
     id: "shampoo",
     label: "ハーブで洗う",
-    brand: "Maharani",
-    title: "泡立たない洗髪を、毎日に。",
+    brand: "マハラニ",
+    title: "ハーブシャンプーの基本の使い方",
     intro: "植物の粉末をお湯に溶いて洗う、ハーブシャンプーの基本です。",
     url: "https://maharani.jp/kaorukami.html",
     steps: [
@@ -106,8 +106,8 @@ export const guides = [
   {
     id: "oil",
     label: "オイルでいたわる",
-    brand: "Atharva",
-    title: "オイルと過ごす、ひと息の時間。",
+    brand: "アタルバ",
+    title: "オイルの基本の使い方",
     intro: "頭皮のマッサージや髪のお手入れに。アタルバのオイルを少量から取り入れます。",
     url: "https://maharani.jp/atharva_headmassageOil.html",
     steps: [

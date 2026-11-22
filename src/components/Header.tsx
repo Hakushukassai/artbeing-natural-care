@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, ShoppingBag } from "lucide-react";
+import artbeingLogo from "@/assets/logo/artbeing.svg";
 import {
   Sheet,
   SheetTrigger,
@@ -27,9 +28,7 @@ export function Header() {
       </a>
       <div className="header-inner">
         <Link to="/" className="wordmark" aria-label="アートビーング トップページ">
-          <span>
-            artbeing<span className="wordmark-dot">.</span>
-          </span>
+          <img src={artbeingLogo} alt="" width={376} height={141} />
         </Link>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           {links.map((l) => (
@@ -60,7 +59,9 @@ export function Header() {
               className="mobile-menu w-full sm:max-w-md"
               aria-describedby="menu-description"
             >
-              <SheetTitle className="menu-title">artbeing.</SheetTitle>
+              <SheetTitle className="menu-title">
+                <img src={artbeingLogo} alt="アートビーング" width={376} height={141} />
+              </SheetTitle>
               <SheetDescription id="menu-description" className="sr-only">
                 商品・使い方・会社情報のメニュー
               </SheetDescription>

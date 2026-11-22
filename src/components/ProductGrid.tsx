@@ -28,21 +28,20 @@ export function ProductGrid({
             >
               <span className="product-tile-photo">
                 <ProductPhoto src={product.item.image ?? product.category.image} />
-                {color && (
-                  <span
-                    className="product-swatch"
-                    style={{ background: color.color }}
-                    title={`仕上がりの目安は${color.name}`}
-                    aria-hidden
-                  />
-                )}
               </span>
               {showBrand && (
                 <span className={`product-tile-brand ${product.brand.key}`}>
-                  {product.brand.reading}
+                  {product.brand.name}
                 </span>
               )}
               <Heading>{displayProductName(product.item.name)}</Heading>
+              {/* 仕上がりの色は、染めた毛束の写真と色の名前で商品名の下に出す */}
+              {color && (
+                <span className="product-tone">
+                  <img className="product-tone-hair" src={color.photo} alt="" width={40} height={18} />
+                  {color.name}
+                </span>
+              )}
             </button>
           </article>
         );

@@ -1,3 +1,4 @@
+import artbeingLogo from "@/assets/logo/artbeing.svg";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
 import { site } from "@/data/site";
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="footer-main">
           <div>
             <Link to="/" className="wordmark" aria-label="アートビーング トップページ">
-              <span>artbeing.</span>
+              <img src={artbeingLogo} alt="" width={376} height={141} loading="lazy" />
             </Link>
             <p>株式会社アートビーング</p>
           </div>
@@ -35,7 +36,6 @@ export function Footer() {
             </a>
           </nav>
         </div>
-        <p className="image-notice">写真は公式サイトの掲載写真です。</p>
         <div className="footer-bottom">
           <small>© {new Date().getFullYear()} ARTBEING INC.</small>
           <div>

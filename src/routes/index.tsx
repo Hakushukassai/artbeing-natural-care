@@ -3,13 +3,21 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import { ProductPhoto } from "@/components/ProductPhoto";
 import { useOpenProduct } from "@/components/ProductPanel";
 import { hairColors } from "@/data/hair-colors";
 import { catalogProducts, displayProductName } from "@/data/catalog";
-import { productImages } from "@/data/product-images";
 import { pageMeta } from "@/data/site";
-import heroProductImage from "@/assets/real/hero-product.jpg";
+import hero2400 from "@/assets/photo/hero-herbal-color-2400.webp";
+import hero1200 from "@/assets/photo/hero-herbal-color-1200.webp";
+import careDye from "@/assets/photo/care-dye-1200.webp";
+import careDyeSmall from "@/assets/photo/care-dye-600.webp";
+import careWash from "@/assets/photo/care-wash-1200.webp";
+import careWashSmall from "@/assets/photo/care-wash-600.webp";
+import careHead from "@/assets/photo/care-head-1200.webp";
+import careHeadSmall from "@/assets/photo/care-head-600.webp";
+import careSkin from "@/assets/photo/care-skin-1200.webp";
+import careSkinSmall from "@/assets/photo/care-skin-600.webp";
+import maharaniLogo from "@/assets/logo/maharani.svg";
 import fieldImage from "@/assets/origin/field.jpg";
 import farmImage from "@/assets/origin/farm.jpg";
 import buyingImage from "@/assets/origin/buying.jpg";
@@ -24,47 +32,39 @@ export const Route = createFileRoute("/")({
       "ヘナとハーブのマハラニ、オイルとスキンケアのアタルバ。株式会社アートビーングのナチュラルケア商品をご紹介します。",
     ),
 });
-const brands = [
-  {
-    key: "maharani",
-    to: "/products/maharani",
-    en: "Maharani",
-    ja: "マハラニ",
-    type: "ヘナ・ハーブシャンプー",
-  },
-  {
-    key: "atharva",
-    to: "/products/atharva",
-    en: "Atharva",
-    ja: "アタルバ",
-    type: "オイル・スキンケア",
-  },
-] as const;
-// 用途ごとに、代表の商品の写真で入口を作る
+// 用途ごとの入口。写真は社内の元データから書き出したもの(scripts/export-photos.py)
 const cares = [
   {
     label: "髪を染める",
     to: "/products/maharani",
     hash: "color",
-    product: "マハラニヘナ 石臼挽き",
+    image: careDye,
+    small: careDyeSmall,
+    alt: "ヘナの葉の上に並べたマハラニヘナの袋",
   },
   {
     label: "髪を洗う・整える",
     to: "/products/maharani",
     hash: "nocolor",
-    product: "ハーブシャンプー 香る髪",
+    image: careWash,
+    small: careWashSmall,
+    alt: "原料のハーブの上に置いたハーブシャンプー香る髪の袋",
   },
   {
     label: "髪・頭皮のケア",
     to: "/products/atharva",
     hash: "head",
-    product: "アタルバ ヘッドマッサージオイル",
+    image: careHead,
+    small: careHeadSmall,
+    alt: "バナナの葉の上に置いたアタルバのヘアオイル",
   },
   {
     label: "肌のケア",
     to: "/products/atharva",
     hash: "skin",
-    product: "アタルバ フェイスクリーム R",
+    image: careSkin,
+    small: careSkinSmall,
+    alt: "アタルバのフェイスクリーム5種類",
   },
 ] as const;
 // 公式サイトに掲載している産地と製造の写真。順番どおりに並べる
@@ -84,33 +84,44 @@ function Home() {
     <>
       <Header />
       <main id="main-content" tabIndex={-1}>
-        <section className="home-hero shell" aria-labelledby="home-title">
-          <h1 id="home-title">髪と肌の、ナチュラルケア。</h1>
-          <figure className="home-hero-photo">
-            {/* トップは人を置かず商品を主役にする。すぐ下の仕上がりの色へ「葉→商品→色」でつなぐ */}
-            <img
-              src={heroProductImage}
-              alt="ヘナの葉の上に置いたハーバルカラーの袋"
-              width={600}
-              height={478}
-              fetchPriority="high"
-            />
-            <figcaption>ハーバルカラー1 ライトブラウン</figcaption>
-          </figure>
-          <ul className="hero-brands">
-            {brands.map((brand) => (
-              <li key={brand.key}>
-                <Link to={brand.to} className={`hero-brand ${brand.key}`}>
-                  <strong>{brand.en}</strong>
-                  <span>
-                    {brand.ja}
-                    <small>{brand.type}</small>
-                  </span>
-                  <ArrowRight size={18} aria-hidden />
+        <section className="top-hero" aria-labelledby="home-title">
+          {/* 最初の画面は人を置かず商品を主役にする(2026-10-08 の決めごと)。5色の袋から下の仕上がりの色へつなぐ */}
+          <img
+            className="top-hero-photo"
+            src={hero2400}
+            srcSet={`${hero1200} 1200w, ${hero2400} 2400w`}
+            sizes="100vw"
+            alt="ヘナの葉の上に並べたハーバルカラー5色の袋"
+            width={2400}
+            height={1600}
+            fetchPriority="high"
+          />
+          <div className="top-intro shell">
+            <div>
+              <h1 id="home-title"><span>インドのヘナと</span><span>アーユルヴェーダのオイル</span></h1>
+              <p>
+                アートビーングは2003年からインドの産地に通い、髪と肌のケア用品を作っています。
+              </p>
+            </div>
+            <ul className="brand-doors">
+              <li>
+                <Link to="/products/maharani" className="brand-door">
+                  <img src={maharaniLogo} alt="マハラニ" width={718} height={381} />
+                  <span>ヘナ・ハーブシャンプー</span>
+                  <ArrowRight size={20} aria-hidden />
                 </Link>
               </li>
-            ))}
-          </ul>
+              <li>
+                <Link to="/products/atharva" className="brand-door">
+                  <strong lang="en">ATHARVA</strong>
+                  <span>
+                    <span className="sr-only">アタルバ </span>オイル・スキンケア
+                  </span>
+                  <ArrowRight size={20} aria-hidden />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </section>
         <HomeColors />
         <nav className="home-cares shell" aria-labelledby="cares-title">
@@ -123,8 +134,16 @@ function Home() {
           <div className="home-care-row">
             {cares.map((care, index) => (
               <Reveal key={care.label} delay={index * 70}>
-                <Link to={care.to} hash={care.hash} className="home-care">
-                  <ProductPhoto src={productImages[care.product]} />
+                <Link to={care.to} hash={care.hash} className="care-tile">
+                  <img
+                    src={care.image}
+                    srcSet={`${care.small} 600w, ${care.image} 1200w`}
+                    sizes="(max-width: 760px) 50vw, 25vw"
+                    alt={care.alt}
+                    loading="lazy"
+                    width={1200}
+                    height={1500}
+                  />
                   <span className="home-care-label">
                     {care.label}
                     <ArrowRight size={16} aria-hidden />
